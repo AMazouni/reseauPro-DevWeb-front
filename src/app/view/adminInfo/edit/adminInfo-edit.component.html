@@ -1,0 +1,89 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit AdminInfo </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>nom</label>
+                    <input type="text" class="form-control" [placeholder]="adminInfo.nom" [(ngModel)] = "adminInfo.nom">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>prenom</label>
+                    <input type="text" class="form-control" [placeholder]="adminInfo.prenom" [(ngModel)] = "adminInfo.prenom">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>code</label>
+                    <input type="text" class="form-control" [placeholder]="adminInfo.code" [(ngModel)] = "adminInfo.code">
+                </div>
+            </div>
+                    <div class="card-header row py-2">Utilisateur</div>
+                    <div class="card body row py-2">
+                        <div class="row">
+                                    <div class="col-md-6 py-2">
+                                        <label>verified</label>
+                                        <select class="form-control" [(ngModel)] = "adminInfo.compteVo.verified">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6"><label>about</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.about">
+                                    </div>
+                                    <div class="col-md-6 py-2">
+                                            <label>dateNaissance</label>
+                                            <input type="date" class="col-md-12" [(ngModel)] = "adminInfo.compteVo.dateNaissance">
+                                    </div>
+                                    <div class="col-md-6 py-2">
+                                        <label>profilVisible</label>
+                                        <select class="form-control" [(ngModel)] = "adminInfo.compteVo.profilVisible">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6"><label>tel</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.tel">
+                                    </div>
+                                    <div class="col-md-6"><label>password</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.password">
+                                    </div>
+                                    <div class="col-md-6"><label>role</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.role">
+                                    </div>
+                                    <div class="col-md-6"><label>email</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.email">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>adminInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.adminInfoVo.nom">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>laureatInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.laureatInfoVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>etudiantInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.etudiantInfoVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>professeurInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.professeurInfoVo.code">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>reponses</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "adminInfo.compteVo.reponsesVo.reponse">
+                                    </div>
+                        </div>
+                    </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editAdminInfo()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

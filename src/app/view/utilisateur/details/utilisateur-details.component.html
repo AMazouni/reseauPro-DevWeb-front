@@ -1,0 +1,119 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">details of Utilisateur </h5>
+        <button type="button" class="close" aria-label="Close" (click)="detailHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <th>Field</th>
+            <th>Value</th>
+          </thead>
+          <tbody>
+           <tr >
+             <td>id</td>
+             <td>{{utilisateurDetail.id}} </td>
+           </tr>
+           <tr >
+             <td>email</td>
+             <td>{{utilisateurDetail.email}} </td>
+           </tr>
+           <tr >
+             <td>password</td>
+             <td>{{utilisateurDetail.password}} </td>
+           </tr>
+           <tr >
+             <td>role</td>
+             <td>{{utilisateurDetail.role}} </td>
+           </tr>
+           <tr >
+             <td>dateNaissance</td>
+             <td>{{utilisateurDetail.dateNaissance}} </td>
+           </tr>
+           <tr >
+             <td>verified</td>
+             <td>{{utilisateurDetail.verified}} </td>
+           </tr>
+           <tr >
+             <td>reponses</td>
+           <td>{{utilisateurDetail.reponsesVo.reponse}} </td>
+           </tr>
+           <tr >
+             <td>etudiantInfo</td>
+           <td>{{utilisateurDetail.etudiantInfoVo.cne}} </td>
+           </tr>
+           <tr >
+             <td>professeurInfo</td>
+           <td>{{utilisateurDetail.professeurInfoVo.code}} </td>
+           </tr>
+           <tr >
+             <td>laureatInfo</td>
+           <td>{{utilisateurDetail.laureatInfoVo.cne}} </td>
+           </tr>
+           <tr >
+             <td>adminInfo</td>
+           <td>{{utilisateurDetail.adminInfoVo.nom}} </td>
+           </tr>
+           <tr >
+             <td>messagesRecus</td>
+             <td> <ul>
+               <li *ngFor="let p of utilisateurDetail.messagesRecusVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+           <tr >
+             <td>messagesEnvoye</td>
+             <td> <ul>
+               <li *ngFor="let p of utilisateurDetail.messagesEnvoyeVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+           <tr >
+             <td>publicationsRediges</td>
+             <td> <ul>
+               <li *ngFor="let p of utilisateurDetail.publicationsRedigesVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+           <tr >
+             <td>profilVisible</td>
+             <td>{{utilisateurDetail.profilVisible}} </td>
+           </tr>
+           <tr >
+             <td>about</td>
+             <td>{{utilisateurDetail.about}} </td>
+           </tr>
+           <tr >
+             <td>tel</td>
+             <td>{{utilisateurDetail.tel}} </td>
+           </tr>
+           <tr >
+             <td>comRediges</td>
+             <td> <ul>
+               <li *ngFor="let p of utilisateurDetail.comRedigesVo">
+          
+                {{p.id}}   {{p.comref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

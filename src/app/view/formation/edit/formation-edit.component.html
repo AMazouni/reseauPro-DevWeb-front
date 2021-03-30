@@ -1,0 +1,198 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit Formation </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>intitule</label>
+                    <input type="text" class="form-control" [placeholder]="formation.intitule" [(ngModel)] = "formation.intitule">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [placeholder]="formation.ref" [(ngModel)] = "formation.ref">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>description</label>
+                    <input type="text" class="form-control" [placeholder]="formation.description" [(ngModel)] = "formation.description">
+                </div>
+            </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>etablissement</label>
+                    <select class="form-control" [(ngModel)]="formation.etablissementVo.ref" >
+                        <option *ngFor="let p of etablissements" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>responsable</label>
+                    <select class="form-control" [(ngModel)]="formation.responsableVo.code" >
+                        <option *ngFor="let p of responsables" [ngValue]="p.code" value="{{p.code}}">{{p.code}}</option>
+                    </select>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add laureats</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>anneFinEtude</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "laureats.anneFinEtude" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>prenom</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "laureats.prenom" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>nom</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "laureats.nom" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>linkedIn</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "laureats.linkedIn" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>cne</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "laureats.cne" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>codeApogee</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "laureats.codeApogee" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>sexe ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "laureats.sexeVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>formationActuelle ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "laureats.formationActuelleVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>fonctionActuelle ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "laureats.fonctionActuelleVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>compte email</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "laureats.compteVo.email">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addlaureats()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added etudiantInfos</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>anneFinEtude</th>
+                                    <th>prenom</th>
+                                    <th>nom</th>
+                                    <th>linkedIn</th>
+                                    <th>cne</th>
+                                    <th>codeApogee</th>
+                                    <th>sexe ref</th>
+                                    <th>formationActuelle ref</th>
+                                    <th>fonctionActuelle ref</th>
+                                    <th>compte email</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of formation.laureatsVo;let i = index">
+                                    <td>{{p.anneFinEtude}}</td>
+                                    <td>{{p.prenom}}</td>
+                                    <td>{{p.nom}}</td>
+                                    <td>{{p.linkedIn}}</td>
+                                    <td>{{p.cne}}</td>
+                                    <td>{{p.codeApogee}}</td>
+                                        <td>{{p.sexeVo.ref}}</td>
+                                        <td>{{p.formationActuelleVo.ref}}</td>
+                                        <td>{{p.fonctionActuelleVo.ref}}</td>
+                                        <td>{{p.compteVo.email}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removelaureats(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add etudiantsAct</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>anneFinEtude</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.anneFinEtude" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>prenom</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.prenom" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>nom</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.nom" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>linkedIn</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.linkedIn" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>cne</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.cne" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>codeApogee</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.codeApogee" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>sexe ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.sexeVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>formationActuelle ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.formationActuelleVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>fonctionActuelle ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.fonctionActuelleVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>compte email</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantsAct.compteVo.email">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addetudiantsAct()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added etudiantInfos</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>anneFinEtude</th>
+                                    <th>prenom</th>
+                                    <th>nom</th>
+                                    <th>linkedIn</th>
+                                    <th>cne</th>
+                                    <th>codeApogee</th>
+                                    <th>sexe ref</th>
+                                    <th>formationActuelle ref</th>
+                                    <th>fonctionActuelle ref</th>
+                                    <th>compte email</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of formation.etudiantsActVo;let i = index">
+                                    <td>{{p.anneFinEtude}}</td>
+                                    <td>{{p.prenom}}</td>
+                                    <td>{{p.nom}}</td>
+                                    <td>{{p.linkedIn}}</td>
+                                    <td>{{p.cne}}</td>
+                                    <td>{{p.codeApogee}}</td>
+                                        <td>{{p.sexeVo.ref}}</td>
+                                        <td>{{p.formationActuelleVo.ref}}</td>
+                                        <td>{{p.fonctionActuelleVo.ref}}</td>
+                                        <td>{{p.compteVo.email}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removeetudiantsAct(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editFormation()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

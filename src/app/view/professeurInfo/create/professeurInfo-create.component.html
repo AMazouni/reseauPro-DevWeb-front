@@ -1,0 +1,95 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create ProfesseurInfo </h5>
+        <button type="button" class="close" aria-label="Close" (click)="createHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+    
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>code</label>
+                    <input type="text" class="form-control" [(ngModel)] = "professeurInfo.code">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>prenom</label>
+                    <input type="text" class="form-control" [(ngModel)] = "professeurInfo.prenom">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>nom</label>
+                    <input type="text" class="form-control" [(ngModel)] = "professeurInfo.nom">
+                </div>
+        </div>
+                <div class="row" >
+                    <label>etablissement</label>
+                    <select class="form-control" [(ngModel)]="professeurInfo.etablissementVo.ref" >
+                        <option *ngFor="let p of etablissements" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                <div class="row" >
+                    <label>compte</label>
+                    <select class="form-control" [(ngModel)]="professeurInfo.compteVo.email" >
+                        <option *ngFor="let p of comptes" [ngValue]="p.email" value="{{p.email}}">{{p.email}}</option>
+                    </select>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add responsableDe</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>intitule</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "responsableDe.intitule" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "responsableDe.ref" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>description</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "responsableDe.description" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>etablissement ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "responsableDe.etablissementVo.ref">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addFormation()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row table-responsive">
+                    <div class="card-header">Added responsableDes</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>intitule</th>
+                                <th>ref</th>
+                                <th>description</th>
+                                    <th>etablissement ref</th>
+                                    <th>responsable code</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of professeurInfo.responsableDeVo;let i = index">
+                                    <td>{{p.intitule}}</td>
+                                    <td>{{p.ref}}</td>
+                                    <td>{{p.description}}</td>
+                                        <td>{{p.etablissementVo.ref}}</td>
+                                        <td>{{p.responsableVo.code}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removeFormation(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="modal-footer" >
+            <button class="form-control" (click)="saveProfesseurInfo()" >Save</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

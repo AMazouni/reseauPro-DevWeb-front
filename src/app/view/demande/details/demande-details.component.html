@@ -1,0 +1,65 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">details of Demande </h5>
+        <button type="button" class="close" aria-label="Close" (click)="detailHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <th>Field</th>
+            <th>Value</th>
+          </thead>
+          <tbody>
+           <tr >
+             <td>id</td>
+             <td>{{demandeDetail.id}} </td>
+           </tr>
+           <tr >
+             <td>ref</td>
+             <td>{{demandeDetail.ref}} </td>
+           </tr>
+           <tr >
+             <td>demandePar</td>
+           <td>{{demandeDetail.demandeParVo.cne}} </td>
+           </tr>
+           <tr >
+             <td>demandeA</td>
+           <td>{{demandeDetail.demandeAVo.cne}} </td>
+           </tr>
+           <tr >
+             <td>objetDemande</td>
+             <td>{{demandeDetail.objetDemande}} </td>
+           </tr>
+           <tr >
+             <td>categorieDemande</td>
+           <td>{{demandeDetail.categorieDemandeVo.ref}} </td>
+           </tr>
+           <tr >
+             <td>infoSupp</td>
+             <td>{{demandeDetail.infoSupp}} </td>
+           </tr>
+           <tr >
+             <td>status</td>
+           <td>{{demandeDetail.statusVo.code}} </td>
+           </tr>
+           <tr >
+             <td>messages</td>
+             <td> <ul>
+               <li *ngFor="let p of demandeDetail.messagesVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

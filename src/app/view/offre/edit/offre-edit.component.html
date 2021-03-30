@@ -1,0 +1,132 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit Offre </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                        <label>dateOffre</label>
+                        <input type="date" class="col-md-12" [(ngModel)] = "offre.dateOffre">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>titre</label>
+                    <input type="text" class="form-control" [placeholder]="offre.titre" [(ngModel)] = "offre.titre">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>infoSup</label>
+                    <input type="text" class="form-control" [placeholder]="offre.infoSup" [(ngModel)] = "offre.infoSup">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>type</label>
+                    <input type="text" class="form-control" [placeholder]="offre.type" [(ngModel)] = "offre.type">
+                </div>
+                <div class="col-md-6 py-2">
+                        <label>dernierDelai</label>
+                        <input type="date" class="col-md-12" [(ngModel)] = "offre.dernierDelai">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [placeholder]="offre.ref" [(ngModel)] = "offre.ref">
+                </div>
+            </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>tags</label>
+                    <select class="form-control" [(ngModel)]="offre.tagsVo.ref" >
+                        <option *ngFor="let p of tagss" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                    <div class="card-header row py-2">Fonction</div>
+                    <div class="card body row py-2">
+                        <div class="row">
+                                    <div class="col-md-6 py-2">
+                                            <label>deteFin</label>
+                                            <input type="date" class="col-md-12" [(ngModel)] = "offre.fonctionVo.deteFin">
+                                    </div>
+                                    <div class="col-md-6"><label>titre</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "offre.fonctionVo.titre">
+                                    </div>
+                                    <div class="col-md-6 py-2">
+                                            <label>dateDebut</label>
+                                            <input type="date" class="col-md-12" [(ngModel)] = "offre.fonctionVo.dateDebut">
+                                    </div>
+                                    <div class="col-md-6"><label>description</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "offre.fonctionVo.description">
+                                    </div>
+                                    <div class="col-md-6"><label>ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "offre.fonctionVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>entreprise</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "offre.fonctionVo.entrepriseVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>occupePar</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "offre.fonctionVo.occupeParVo.cne">
+                                    </div>
+                        </div>
+                    </div>
+                <div class="card row">
+                    <div class="card-header">Add candidatures</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>lettreMotivation</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "candidatures.lettreMotivation" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "candidatures.ref" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>candidat cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "candidatures.candidatVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>status code</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "candidatures.statusVo.code">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>offreConcerne ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "candidatures.offreConcerneVo.ref">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addcandidatures()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added candidatures</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>lettreMotivation</th>
+                                    <th>ref</th>
+                                    <th>candidat cne</th>
+                                    <th>status code</th>
+                                    <th>offreConcerne ref</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of offre.candidaturesVo;let i = index">
+                                    <td>{{p.lettreMotivation}}</td>
+                                    <td>{{p.ref}}</td>
+                                        <td>{{p.candidatVo.cne}}</td>
+                                        <td>{{p.statusVo.code}}</td>
+                                        <td>{{p.offreConcerneVo.ref}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removecandidatures(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editOffre()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

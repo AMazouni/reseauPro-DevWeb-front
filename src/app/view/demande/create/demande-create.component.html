@@ -1,0 +1,107 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Demande </h5>
+        <button type="button" class="close" aria-label="Close" (click)="createHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+    
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>objetDemande</label>
+                    <input type="text" class="form-control" [(ngModel)] = "demande.objetDemande">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>infoSupp</label>
+                    <input type="text" class="form-control" [(ngModel)] = "demande.infoSupp">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [(ngModel)] = "demande.ref">
+                </div>
+        </div>
+                <div class="row" >
+                    <label>categorieDemande</label>
+                    <select class="form-control" [(ngModel)]="demande.categorieDemandeVo.ref" >
+                        <option *ngFor="let p of categorieDemandes" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                <div class="row" >
+                    <label>demandePar</label>
+                    <select class="form-control" [(ngModel)]="demande.demandeParVo.cne" >
+                        <option *ngFor="let p of demandePars" [ngValue]="p.cne" value="{{p.cne}}">{{p.cne}}</option>
+                    </select>
+                </div>
+                <div class="row" >
+                    <label>status</label>
+                    <select class="form-control" [(ngModel)]="demande.statusVo.code" >
+                        <option *ngFor="let p of statuss" [ngValue]="p.code" value="{{p.code}}">{{p.code}}</option>
+                    </select>
+                </div>
+                <div class="row" >
+                    <label>demandeA</label>
+                    <select class="form-control" [(ngModel)]="demande.demandeAVo.cne" >
+                        <option *ngFor="let p of demandeAs" [ngValue]="p.cne" value="{{p.cne}}">{{p.cne}}</option>
+                    </select>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add messages</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>contenu</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "messages.contenu" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "messages.ref" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>objet</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "messages.objet" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>emetteur email</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "messages.emetteurVo.email">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addMessage()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row table-responsive">
+                    <div class="card-header">Added messagess</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>contenu</th>
+                                <th>ref</th>
+                                <th>objet</th>
+                                    <th>emetteur email</th>
+                                    <th>demandeConcerne ref</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of demande.messagesVo;let i = index">
+                                    <td>{{p.contenu}}</td>
+                                    <td>{{p.ref}}</td>
+                                    <td>{{p.objet}}</td>
+                                        <td>{{p.emetteurVo.email}}</td>
+                                        <td>{{p.demandeConcerneVo.ref}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removeMessage(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="modal-footer" >
+            <button class="form-control" (click)="saveDemande()" >Save</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

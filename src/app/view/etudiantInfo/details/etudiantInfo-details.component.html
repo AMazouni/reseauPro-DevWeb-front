@@ -1,0 +1,107 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">details of EtudiantInfo </h5>
+        <button type="button" class="close" aria-label="Close" (click)="detailHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <th>Field</th>
+            <th>Value</th>
+          </thead>
+          <tbody>
+           <tr >
+             <td>id</td>
+             <td>{{etudiantInfoDetail.id}} </td>
+           </tr>
+           <tr >
+             <td>cne</td>
+             <td>{{etudiantInfoDetail.cne}} </td>
+           </tr>
+           <tr >
+             <td>codeApogee</td>
+             <td>{{etudiantInfoDetail.codeApogee}} </td>
+           </tr>
+           <tr >
+             <td>nom</td>
+             <td>{{etudiantInfoDetail.nom}} </td>
+           </tr>
+           <tr >
+             <td>prenom</td>
+             <td>{{etudiantInfoDetail.prenom}} </td>
+           </tr>
+           <tr >
+             <td>formations</td>
+             <td> <ul>
+               <li *ngFor="let p of etudiantInfoDetail.formationsVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+           <tr >
+             <td>formationActuelle</td>
+           <td>{{etudiantInfoDetail.formationActuelleVo.ref}} </td>
+           </tr>
+           <tr >
+             <td>linkedIn</td>
+             <td>{{etudiantInfoDetail.linkedIn}} </td>
+           </tr>
+           <tr >
+             <td>sexe</td>
+           <td>{{etudiantInfoDetail.sexeVo.ref}} </td>
+           </tr>
+           <tr >
+             <td>anneFinEtude</td>
+             <td>{{etudiantInfoDetail.anneFinEtude}} </td>
+           </tr>
+           <tr >
+             <td>experiencesPro</td>
+             <td> <ul>
+               <li *ngFor="let p of etudiantInfoDetail.experiencesProVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+           <tr >
+             <td>fonctionActuelle</td>
+           <td>{{etudiantInfoDetail.fonctionActuelleVo.ref}} </td>
+           </tr>
+           <tr >
+             <td>demandeRecu</td>
+             <td> <ul>
+               <li *ngFor="let p of etudiantInfoDetail.demandeRecuVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+           <tr >
+             <td>demandesEnvoye</td>
+             <td> <ul>
+               <li *ngFor="let p of etudiantInfoDetail.demandesEnvoyeVo">
+          
+                {{p.id}}   {{p.ref}} 
+               </li>
+             </ul>
+             </td>
+           </tr>
+           <tr >
+             <td>compte</td>
+           <td>{{etudiantInfoDetail.compteVo.email}} </td>
+           </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

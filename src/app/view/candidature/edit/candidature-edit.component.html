@@ -1,0 +1,50 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit Candidature </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>lettreMotivation</label>
+                    <input type="text" class="form-control" [placeholder]="candidature.lettreMotivation" [(ngModel)] = "candidature.lettreMotivation">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [placeholder]="candidature.ref" [(ngModel)] = "candidature.ref">
+                </div>
+            </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>candidat</label>
+                    <select class="form-control" [(ngModel)]="candidature.candidatVo.cne" >
+                        <option *ngFor="let p of candidats" [ngValue]="p.cne" value="{{p.cne}}">{{p.cne}}</option>
+                    </select>
+                </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>status</label>
+                    <select class="form-control" [(ngModel)]="candidature.statusVo.code" >
+                        <option *ngFor="let p of statuss" [ngValue]="p.code" value="{{p.code}}">{{p.code}}</option>
+                    </select>
+                </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>offreConcerne</label>
+                    <select class="form-control" [(ngModel)]="candidature.offreConcerneVo.ref" >
+                        <option *ngFor="let p of offreConcernes" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editCandidature()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

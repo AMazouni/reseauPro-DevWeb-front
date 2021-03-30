@@ -1,0 +1,134 @@
+
+<div class="container">
+  <div class="row">
+    <div id="accordion" class="col-12 my-3">
+      <div class="card">
+        <div class="card-header border-0 bg-white" id="headingSearch">
+          
+            <button class="btn btn-info  btn-sm fa fa-filter" data-toggle="collapse" data-target="#search" aria-expanded="true" aria-controls="search">
+              <h5 class="float-right">Search Forms</h5>
+            </button>
+         
+        </div>
+
+        <div id="search" class="collapse" aria-labelledby="headingSearch" data-parent="#accordion">
+          <div class="card-body">
+            <div class="container">
+              <div class = "row">
+               <div class="form-row">
+   
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">id</small>
+<input type="text" class="form-control col-12" placeholder="id" [(ngModel)]="etudiantInfoSearch.id">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">cne</small>
+<input type="text" class="form-control col-12" placeholder="cne" [(ngModel)]="etudiantInfoSearch.cne">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">codeApogee</small>
+<input type="text" class="form-control col-12" placeholder="codeApogee" [(ngModel)]="etudiantInfoSearch.codeApogee">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">nom</small>
+<input type="text" class="form-control col-12" placeholder="nom" [(ngModel)]="etudiantInfoSearch.nom">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">prenom</small>
+<input type="text" class="form-control col-12" placeholder="prenom" [(ngModel)]="etudiantInfoSearch.prenom">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">formationActuelle</small>
+                    <select class="form-control col-12" [(ngModel)]="etudiantInfoSearch.formationActuelleVo" >
+                        <option *ngFor="let p of formationActuelles" [ngValue]="p" >{{p.ref}}</option>
+                    </select>
+                 </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">linkedIn</small>
+<input type="text" class="form-control col-12" placeholder="linkedIn" [(ngModel)]="etudiantInfoSearch.linkedIn">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">sexe</small>
+                    <select class="form-control col-12" [(ngModel)]="etudiantInfoSearch.sexeVo" >
+                        <option *ngFor="let p of sexes" [ngValue]="p" >{{p.ref}}</option>
+                    </select>
+                 </div>
+              <div class="input-group  col-4  my-2">
+    <div class="col-5  mx-1 px-1">
+      <small class="text-muted">anneFinEtude Min</small>
+      <input type="text" class="form-control" placeholder="Min anneFinEtude" [(ngModel)]="etudiantInfoSearch.anneFinEtudeMin">
+    </div>
+    <div class="col-5  mx-1 px-1 ">
+      <small class="text-muted">anneFinEtude Min</small>
+      <input type="text" class="form-control" placeholder="Max anneFinEtude" [(ngModel)]="etudiantInfoSearch.anneFinEtudeMax">
+    </div>
+             </div>
+              </div>    
+          </div>
+           <button class="btn btn-info btn-sm fa fa-search float-right px-5 py-2 my-4" (click)="findEtudiantInfo(etudiantInfoSearch)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-header bg-transparent">
+    <div class="float-left px-1"> <h5>List of etudiantInfos. </h5></div>
+
+          <button class="btn btn-success btn-sm fa fa-plus float-right" (click)="createShow()"> Create a new etudiantInfo</button>
+          
+    </div>
+    <div class="card-body table-responsive">
+
+      <table class="table table-hover col-md-12">
+        <thead class="thead-dark">
+
+          <th>id</th>
+          <th>cne</th>
+          <th>codeApogee</th>
+          <th>nom</th>
+          <th>prenom</th>
+            <th>formationActuelle reference</th>
+          <th>linkedIn</th>
+            <th>sexe reference</th>
+          <th>anneFinEtude</th>
+            <th>fonctionActuelle reference</th>
+            <th>compte reference</th>
+     <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of etudiantInfoListe">
+
+           <td>{{p.id}}</td>
+           <td>{{p.cne}}</td>
+           <td>{{p.codeApogee}}</td>
+           <td>{{p.nom}}</td>
+           <td>{{p.prenom}}</td>
+            <td>{{p.formationActuelleVo?.ref}}</td>
+           <td>{{p.linkedIn}}</td>
+            <td>{{p.sexeVo?.ref}}</td>
+           <td>{{p.anneFinEtude}}</td>
+            <td>{{p.fonctionActuelleVo?.ref}}</td>
+            <td>{{p.compteVo?.email}}</td>
+ 
+
+<td><button class="btn btn-danger btn-sm fa fa-trash mx-md-1" (click)="delete(p)"></button>
+  <button class="btn btn-warning btn-sm fa fa-external-link mx-md-1" (click)="detailShow(p)"></button>
+    <button class="btn btn-info btn-sm fa fa-pencil mx-md-1" (click)="editShow(p)"></button>
+  
+  
+
+</td>
+
+</tr>
+  <app-etudiantInfo-edit *ngIf="etudiantInfoShowEdit"></app-etudiantInfo-edit>
+  <app-etudiantInfo-create *ngIf="etudiantInfoShowCreate"></app-etudiantInfo-create>
+<app-etudiantInfo-details *ngIf="etudiantInfoShowDetail"></app-etudiantInfo-details>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

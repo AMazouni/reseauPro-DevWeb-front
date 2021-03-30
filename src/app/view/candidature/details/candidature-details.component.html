@@ -1,0 +1,47 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">details of Candidature </h5>
+        <button type="button" class="close" aria-label="Close" (click)="detailHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <th>Field</th>
+            <th>Value</th>
+          </thead>
+          <tbody>
+           <tr >
+             <td>id</td>
+             <td>{{candidatureDetail.id}} </td>
+           </tr>
+           <tr >
+             <td>ref</td>
+             <td>{{candidatureDetail.ref}} </td>
+           </tr>
+           <tr >
+             <td>offreConcerne</td>
+           <td>{{candidatureDetail.offreConcerneVo.ref}} </td>
+           </tr>
+           <tr >
+             <td>candidat</td>
+           <td>{{candidatureDetail.candidatVo.cne}} </td>
+           </tr>
+           <tr >
+             <td>lettreMotivation</td>
+             <td>{{candidatureDetail.lettreMotivation}} </td>
+           </tr>
+           <tr >
+             <td>status</td>
+           <td>{{candidatureDetail.statusVo.code}} </td>
+           </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

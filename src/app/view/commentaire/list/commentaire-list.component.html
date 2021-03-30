@@ -1,0 +1,100 @@
+
+<div class="container">
+  <div class="row">
+    <div id="accordion" class="col-12 my-3">
+      <div class="card">
+        <div class="card-header border-0 bg-white" id="headingSearch">
+          
+            <button class="btn btn-info  btn-sm fa fa-filter" data-toggle="collapse" data-target="#search" aria-expanded="true" aria-controls="search">
+              <h5 class="float-right">Search Forms</h5>
+            </button>
+         
+        </div>
+
+        <div id="search" class="collapse" aria-labelledby="headingSearch" data-parent="#accordion">
+          <div class="card-body">
+            <div class="container">
+              <div class = "row">
+               <div class="form-row">
+   
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">id</small>
+<input type="text" class="form-control col-12" placeholder="id" [(ngModel)]="commentaireSearch.id">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">comref</small>
+<input type="text" class="form-control col-12" placeholder="comref" [(ngModel)]="commentaireSearch.comref">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">publication</small>
+                    <select class="form-control col-12" [(ngModel)]="commentaireSearch.publicationVo" >
+                        <option *ngFor="let p of publications" [ngValue]="p" >{{p.ref}}</option>
+                    </select>
+                 </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">postePar</small>
+                    <select class="form-control col-12" [(ngModel)]="commentaireSearch.posteParVo" >
+                        <option *ngFor="let p of postePars" [ngValue]="p" >{{p.email}}</option>
+                    </select>
+                 </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">contenu</small>
+<input type="text" class="form-control col-12" placeholder="contenu" [(ngModel)]="commentaireSearch.contenu">
+             </div>
+              </div>    
+          </div>
+           <button class="btn btn-info btn-sm fa fa-search float-right px-5 py-2 my-4" (click)="findCommentaire(commentaireSearch)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-header bg-transparent">
+    <div class="float-left px-1"> <h5>List of commentaires. </h5></div>
+
+          <button class="btn btn-success btn-sm fa fa-plus float-right" (click)="createShow()"> Create a new commentaire</button>
+          
+    </div>
+    <div class="card-body table-responsive">
+
+      <table class="table table-hover col-md-12">
+        <thead class="thead-dark">
+
+          <th>id</th>
+          <th>comref</th>
+            <th>publication reference</th>
+            <th>postePar reference</th>
+          <th>contenu</th>
+     <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of commentaireListe">
+
+           <td>{{p.id}}</td>
+           <td>{{p.comref}}</td>
+            <td>{{p.publicationVo?.ref}}</td>
+            <td>{{p.posteParVo?.email}}</td>
+           <td>{{p.contenu}}</td>
+ 
+
+<td><button class="btn btn-danger btn-sm fa fa-trash mx-md-1" (click)="delete(p)"></button>
+  <button class="btn btn-warning btn-sm fa fa-external-link mx-md-1" (click)="detailShow(p)"></button>
+    <button class="btn btn-info btn-sm fa fa-pencil mx-md-1" (click)="editShow(p)"></button>
+  
+  
+
+</td>
+
+</tr>
+  <app-commentaire-edit *ngIf="commentaireShowEdit"></app-commentaire-edit>
+  <app-commentaire-create *ngIf="commentaireShowCreate"></app-commentaire-create>
+<app-commentaire-details *ngIf="commentaireShowDetail"></app-commentaire-details>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,373 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit EtudiantInfo </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>anneFinEtude</label>
+                    <input type="text" class="form-control" [placeholder]="etudiantInfo.anneFinEtude" [(ngModel)] = "etudiantInfo.anneFinEtude">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>prenom</label>
+                    <input type="text" class="form-control" [placeholder]="etudiantInfo.prenom" [(ngModel)] = "etudiantInfo.prenom">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>nom</label>
+                    <input type="text" class="form-control" [placeholder]="etudiantInfo.nom" [(ngModel)] = "etudiantInfo.nom">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>linkedIn</label>
+                    <input type="text" class="form-control" [placeholder]="etudiantInfo.linkedIn" [(ngModel)] = "etudiantInfo.linkedIn">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>cne</label>
+                    <input type="text" class="form-control" [placeholder]="etudiantInfo.cne" [(ngModel)] = "etudiantInfo.cne">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>codeApogee</label>
+                    <input type="text" class="form-control" [placeholder]="etudiantInfo.codeApogee" [(ngModel)] = "etudiantInfo.codeApogee">
+                </div>
+            </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>sexe</label>
+                    <select class="form-control" [(ngModel)]="etudiantInfo.sexeVo.ref" >
+                        <option *ngFor="let p of sexes" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>formationActuelle</label>
+                    <select class="form-control" [(ngModel)]="etudiantInfo.formationActuelleVo.ref" >
+                        <option *ngFor="let p of formationActuelles" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                    <div class="card-header row py-2">Fonction</div>
+                    <div class="card body row py-2">
+                        <div class="row">
+                                    <div class="col-md-6 py-2">
+                                            <label>deteFin</label>
+                                            <input type="date" class="col-md-12" [(ngModel)] = "etudiantInfo.fonctionActuelleVo.deteFin">
+                                    </div>
+                                    <div class="col-md-6"><label>titre</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.fonctionActuelleVo.titre">
+                                    </div>
+                                    <div class="col-md-6 py-2">
+                                            <label>dateDebut</label>
+                                            <input type="date" class="col-md-12" [(ngModel)] = "etudiantInfo.fonctionActuelleVo.dateDebut">
+                                    </div>
+                                    <div class="col-md-6"><label>description</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.fonctionActuelleVo.description">
+                                    </div>
+                                    <div class="col-md-6"><label>ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.fonctionActuelleVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>entreprise</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.fonctionActuelleVo.entrepriseVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>occupePar</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.fonctionActuelleVo.occupeParVo.cne">
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="card-header row py-2">Utilisateur</div>
+                    <div class="card body row py-2">
+                        <div class="row">
+                                    <div class="col-md-6 py-2">
+                                        <label>verified</label>
+                                        <select class="form-control" [(ngModel)] = "etudiantInfo.compteVo.verified">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6"><label>about</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.about">
+                                    </div>
+                                    <div class="col-md-6 py-2">
+                                            <label>dateNaissance</label>
+                                            <input type="date" class="col-md-12" [(ngModel)] = "etudiantInfo.compteVo.dateNaissance">
+                                    </div>
+                                    <div class="col-md-6 py-2">
+                                        <label>profilVisible</label>
+                                        <select class="form-control" [(ngModel)] = "etudiantInfo.compteVo.profilVisible">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6"><label>tel</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.tel">
+                                    </div>
+                                    <div class="col-md-6"><label>password</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.password">
+                                    </div>
+                                    <div class="col-md-6"><label>role</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.role">
+                                    </div>
+                                    <div class="col-md-6"><label>email</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.email">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>adminInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.adminInfoVo.nom">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>laureatInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.laureatInfoVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>etudiantInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.etudiantInfoVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>professeurInfo</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.professeurInfoVo.code">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>reponses</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "etudiantInfo.compteVo.reponsesVo.reponse">
+                                    </div>
+                        </div>
+                    </div>
+                <div class="card row">
+                    <div class="card-header">Add experiencesPro</div>
+                    <div class="card-body">
+                        <div class="row">
+                                    <div class="col-md-6 py-2">
+                                            <label>deteFin</label>
+                                            <input class="col-md-12" [(ngModel)] = "experiencesPro.deteFin">
+                                    </div>
+                                <div class="col-md-6 py-2"><label>titre</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "experiencesPro.titre" >
+                                </div>
+                                    <div class="col-md-6 py-2">
+                                            <label>dateDebut</label>
+                                            <input class="col-md-12" [(ngModel)] = "experiencesPro.dateDebut">
+                                    </div>
+                                <div class="col-md-6 py-2"><label>description</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "experiencesPro.description" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "experiencesPro.ref" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>entreprise ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "experiencesPro.entrepriseVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>occupePar cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "experiencesPro.occupeParVo.cne">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addexperiencesPro()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added fonctions</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>deteFin</th>
+                                    <th>titre</th>
+                                    <th>dateDebut</th>
+                                    <th>description</th>
+                                    <th>ref</th>
+                                    <th>entreprise ref</th>
+                                    <th>occupePar cne</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of etudiantInfo.experiencesProVo;let i = index">
+                                    <td>{{p.deteFin}}</td>
+                                    <td>{{p.titre}}</td>
+                                    <td>{{p.dateDebut}}</td>
+                                    <td>{{p.description}}</td>
+                                    <td>{{p.ref}}</td>
+                                        <td>{{p.entrepriseVo.ref}}</td>
+                                        <td>{{p.occupeParVo.cne}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removeexperiencesPro(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add formations</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>intitule</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "formations.intitule" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "formations.ref" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>description</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "formations.description" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>etablissement ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "formations.etablissementVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>responsable code</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "formations.responsableVo.code">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addformations()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added formations</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>intitule</th>
+                                    <th>ref</th>
+                                    <th>description</th>
+                                    <th>etablissement ref</th>
+                                    <th>responsable code</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of etudiantInfo.formationsVo;let i = index">
+                                    <td>{{p.intitule}}</td>
+                                    <td>{{p.ref}}</td>
+                                    <td>{{p.description}}</td>
+                                        <td>{{p.etablissementVo.ref}}</td>
+                                        <td>{{p.responsableVo.code}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removeformations(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add demandeRecu</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>objetDemande</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "demandeRecu.objetDemande" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>infoSupp</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "demandeRecu.infoSupp" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "demandeRecu.ref" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>categorieDemande ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandeRecu.categorieDemandeVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>demandePar cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandeRecu.demandeParVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>status code</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandeRecu.statusVo.code">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>demandeA cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandeRecu.demandeAVo.cne">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="adddemandeRecu()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added demandes</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>objetDemande</th>
+                                    <th>infoSupp</th>
+                                    <th>ref</th>
+                                    <th>categorieDemande ref</th>
+                                    <th>demandePar cne</th>
+                                    <th>status code</th>
+                                    <th>demandeA cne</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of etudiantInfo.demandeRecuVo;let i = index">
+                                    <td>{{p.objetDemande}}</td>
+                                    <td>{{p.infoSupp}}</td>
+                                    <td>{{p.ref}}</td>
+                                        <td>{{p.categorieDemandeVo.ref}}</td>
+                                        <td>{{p.demandeParVo.cne}}</td>
+                                        <td>{{p.statusVo.code}}</td>
+                                        <td>{{p.demandeAVo.cne}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removedemandeRecu(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add demandesEnvoye</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>objetDemande</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "demandesEnvoye.objetDemande" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>infoSupp</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "demandesEnvoye.infoSupp" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "demandesEnvoye.ref" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>categorieDemande ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandesEnvoye.categorieDemandeVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>demandePar cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandesEnvoye.demandeParVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>status code</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandesEnvoye.statusVo.code">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>demandeA cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "demandesEnvoye.demandeAVo.cne">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="adddemandesEnvoye()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added demandes</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>objetDemande</th>
+                                    <th>infoSupp</th>
+                                    <th>ref</th>
+                                    <th>categorieDemande ref</th>
+                                    <th>demandePar cne</th>
+                                    <th>status code</th>
+                                    <th>demandeA cne</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of etudiantInfo.demandesEnvoyeVo;let i = index">
+                                    <td>{{p.objetDemande}}</td>
+                                    <td>{{p.infoSupp}}</td>
+                                    <td>{{p.ref}}</td>
+                                        <td>{{p.categorieDemandeVo.ref}}</td>
+                                        <td>{{p.demandeParVo.cne}}</td>
+                                        <td>{{p.statusVo.code}}</td>
+                                        <td>{{p.demandeAVo.cne}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removedemandesEnvoye(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editEtudiantInfo()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

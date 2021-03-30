@@ -1,0 +1,108 @@
+
+<div class="container">
+  <div class="row">
+    <div id="accordion" class="col-12 my-3">
+      <div class="card">
+        <div class="card-header border-0 bg-white" id="headingSearch">
+          
+            <button class="btn btn-info  btn-sm fa fa-filter" data-toggle="collapse" data-target="#search" aria-expanded="true" aria-controls="search">
+              <h5 class="float-right">Search Forms</h5>
+            </button>
+         
+        </div>
+
+        <div id="search" class="collapse" aria-labelledby="headingSearch" data-parent="#accordion">
+          <div class="card-body">
+            <div class="container">
+              <div class = "row">
+               <div class="form-row">
+   
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">id</small>
+<input type="text" class="form-control col-12" placeholder="id" [(ngModel)]="candidatureSearch.id">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">ref</small>
+<input type="text" class="form-control col-12" placeholder="ref" [(ngModel)]="candidatureSearch.ref">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">offreConcerne</small>
+                    <select class="form-control col-12" [(ngModel)]="candidatureSearch.offreConcerneVo" >
+                        <option *ngFor="let p of offreConcernes" [ngValue]="p" >{{p.ref}}</option>
+                    </select>
+                 </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">candidat</small>
+                    <select class="form-control col-12" [(ngModel)]="candidatureSearch.candidatVo" >
+                        <option *ngFor="let p of candidats" [ngValue]="p" >{{p.cne}}</option>
+                    </select>
+                 </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">lettreMotivation</small>
+<input type="text" class="form-control col-12" placeholder="lettreMotivation" [(ngModel)]="candidatureSearch.lettreMotivation">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">status</small>
+                    <select class="form-control col-12" [(ngModel)]="candidatureSearch.statusVo" >
+                        <option *ngFor="let p of statuss" [ngValue]="p" >{{p.code}}</option>
+                    </select>
+                 </div>
+              </div>    
+          </div>
+           <button class="btn btn-info btn-sm fa fa-search float-right px-5 py-2 my-4" (click)="findCandidature(candidatureSearch)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-header bg-transparent">
+    <div class="float-left px-1"> <h5>List of candidatures. </h5></div>
+
+          <button class="btn btn-success btn-sm fa fa-plus float-right" (click)="createShow()"> Create a new candidature</button>
+          
+    </div>
+    <div class="card-body table-responsive">
+
+      <table class="table table-hover col-md-12">
+        <thead class="thead-dark">
+
+          <th>id</th>
+          <th>ref</th>
+            <th>offreConcerne reference</th>
+            <th>candidat reference</th>
+          <th>lettreMotivation</th>
+            <th>status reference</th>
+     <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of candidatureListe">
+
+           <td>{{p.id}}</td>
+           <td>{{p.ref}}</td>
+            <td>{{p.offreConcerneVo?.ref}}</td>
+            <td>{{p.candidatVo?.cne}}</td>
+           <td>{{p.lettreMotivation}}</td>
+            <td>{{p.statusVo?.code}}</td>
+ 
+
+<td><button class="btn btn-danger btn-sm fa fa-trash mx-md-1" (click)="delete(p)"></button>
+  <button class="btn btn-warning btn-sm fa fa-external-link mx-md-1" (click)="detailShow(p)"></button>
+    <button class="btn btn-info btn-sm fa fa-pencil mx-md-1" (click)="editShow(p)"></button>
+  
+  
+
+</td>
+
+</tr>
+  <app-candidature-edit *ngIf="candidatureShowEdit"></app-candidature-edit>
+  <app-candidature-create *ngIf="candidatureShowCreate"></app-candidature-create>
+<app-candidature-details *ngIf="candidatureShowDetail"></app-candidature-details>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

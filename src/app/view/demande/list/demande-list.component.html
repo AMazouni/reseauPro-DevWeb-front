@@ -1,0 +1,122 @@
+
+<div class="container">
+  <div class="row">
+    <div id="accordion" class="col-12 my-3">
+      <div class="card">
+        <div class="card-header border-0 bg-white" id="headingSearch">
+          
+            <button class="btn btn-info  btn-sm fa fa-filter" data-toggle="collapse" data-target="#search" aria-expanded="true" aria-controls="search">
+              <h5 class="float-right">Search Forms</h5>
+            </button>
+         
+        </div>
+
+        <div id="search" class="collapse" aria-labelledby="headingSearch" data-parent="#accordion">
+          <div class="card-body">
+            <div class="container">
+              <div class = "row">
+               <div class="form-row">
+   
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">id</small>
+<input type="text" class="form-control col-12" placeholder="id" [(ngModel)]="demandeSearch.id">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">ref</small>
+<input type="text" class="form-control col-12" placeholder="ref" [(ngModel)]="demandeSearch.ref">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">demandePar</small>
+                    <select class="form-control col-12" [(ngModel)]="demandeSearch.demandeParVo" >
+                        <option *ngFor="let p of demandePars" [ngValue]="p" >{{p.cne}}</option>
+                    </select>
+                 </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">demandeA</small>
+                    <select class="form-control col-12" [(ngModel)]="demandeSearch.demandeAVo" >
+                        <option *ngFor="let p of demandeAs" [ngValue]="p" >{{p.cne}}</option>
+                    </select>
+                 </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">objetDemande</small>
+<input type="text" class="form-control col-12" placeholder="objetDemande" [(ngModel)]="demandeSearch.objetDemande">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">categorieDemande</small>
+                    <select class="form-control col-12" [(ngModel)]="demandeSearch.categorieDemandeVo" >
+                        <option *ngFor="let p of categorieDemandes" [ngValue]="p" >{{p.ref}}</option>
+                    </select>
+                 </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">infoSupp</small>
+<input type="text" class="form-control col-12" placeholder="infoSupp" [(ngModel)]="demandeSearch.infoSupp">
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">status</small>
+                    <select class="form-control col-12" [(ngModel)]="demandeSearch.statusVo" >
+                        <option *ngFor="let p of statuss" [ngValue]="p" >{{p.code}}</option>
+                    </select>
+                 </div>
+              </div>    
+          </div>
+           <button class="btn btn-info btn-sm fa fa-search float-right px-5 py-2 my-4" (click)="findDemande(demandeSearch)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-header bg-transparent">
+    <div class="float-left px-1"> <h5>List of demandes. </h5></div>
+
+          <button class="btn btn-success btn-sm fa fa-plus float-right" (click)="createShow()"> Create a new demande</button>
+          
+    </div>
+    <div class="card-body table-responsive">
+
+      <table class="table table-hover col-md-12">
+        <thead class="thead-dark">
+
+          <th>id</th>
+          <th>ref</th>
+            <th>demandePar reference</th>
+            <th>demandeA reference</th>
+          <th>objetDemande</th>
+            <th>categorieDemande reference</th>
+          <th>infoSupp</th>
+            <th>status reference</th>
+     <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of demandeListe">
+
+           <td>{{p.id}}</td>
+           <td>{{p.ref}}</td>
+            <td>{{p.demandeParVo?.cne}}</td>
+            <td>{{p.demandeAVo?.cne}}</td>
+           <td>{{p.objetDemande}}</td>
+            <td>{{p.categorieDemandeVo?.ref}}</td>
+           <td>{{p.infoSupp}}</td>
+            <td>{{p.statusVo?.code}}</td>
+ 
+
+<td><button class="btn btn-danger btn-sm fa fa-trash mx-md-1" (click)="delete(p)"></button>
+  <button class="btn btn-warning btn-sm fa fa-external-link mx-md-1" (click)="detailShow(p)"></button>
+    <button class="btn btn-info btn-sm fa fa-pencil mx-md-1" (click)="editShow(p)"></button>
+  
+  
+
+</td>
+
+</tr>
+  <app-demande-edit *ngIf="demandeShowEdit"></app-demande-edit>
+  <app-demande-create *ngIf="demandeShowCreate"></app-demande-create>
+<app-demande-details *ngIf="demandeShowDetail"></app-demande-details>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

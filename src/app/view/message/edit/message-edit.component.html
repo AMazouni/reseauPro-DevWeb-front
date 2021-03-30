@@ -1,0 +1,147 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit Message </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>contenu</label>
+                    <input type="text" class="form-control" [placeholder]="message.contenu" [(ngModel)] = "message.contenu">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [placeholder]="message.ref" [(ngModel)] = "message.ref">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>objet</label>
+                    <input type="text" class="form-control" [placeholder]="message.objet" [(ngModel)] = "message.objet">
+                </div>
+            </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>emetteur</label>
+                    <select class="form-control" [(ngModel)]="message.emetteurVo.email" >
+                        <option *ngFor="let p of emetteurs" [ngValue]="p.email" value="{{p.email}}">{{p.email}}</option>
+                    </select>
+                </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>demandeConcerne</label>
+                    <select class="form-control" [(ngModel)]="message.demandeConcerneVo.ref" >
+                        <option *ngFor="let p of demandeConcernes" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add destinataire</div>
+                    <div class="card-body">
+                        <div class="row">
+                                    <div class="col-md-6 py-2">
+                                        <label>verified</label>
+                                        <select class="form-control" [(ngModel)] = "destinataire.verified">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>
+                                <div class="col-md-6 py-2"><label>about</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "destinataire.about" >
+                                </div>
+                                    <div class="col-md-6 py-2">
+                                            <label>dateNaissance</label>
+                                            <input class="col-md-12" [(ngModel)] = "destinataire.dateNaissance">
+                                    </div>
+                                    <div class="col-md-6 py-2">
+                                        <label>profilVisible</label>
+                                        <select class="form-control" [(ngModel)] = "destinataire.profilVisible">
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        </select>
+                                    </div>
+                                <div class="col-md-6 py-2"><label>tel</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "destinataire.tel" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>password</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "destinataire.password" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>role</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "destinataire.role" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>email</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "destinataire.email" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>adminInfo nom</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "destinataire.adminInfoVo.nom">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>laureatInfo cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "destinataire.laureatInfoVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>etudiantInfo cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "destinataire.etudiantInfoVo.cne">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>professeurInfo code</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "destinataire.professeurInfoVo.code">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>reponses reponse</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "destinataire.reponsesVo.reponse">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="adddestinataire()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added utilisateurs</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>verified</th>
+                                    <th>about</th>
+                                    <th>dateNaissance</th>
+                                    <th>profilVisible</th>
+                                    <th>tel</th>
+                                    <th>password</th>
+                                    <th>role</th>
+                                    <th>email</th>
+                                    <th>adminInfo nom</th>
+                                    <th>laureatInfo cne</th>
+                                    <th>etudiantInfo cne</th>
+                                    <th>professeurInfo code</th>
+                                    <th>reponses reponse</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of message.destinataireVo;let i = index">
+                                    <td>{{p.verified}}</td>
+                                    <td>{{p.about}}</td>
+                                    <td>{{p.dateNaissance}}</td>
+                                    <td>{{p.profilVisible}}</td>
+                                    <td>{{p.tel}}</td>
+                                    <td>{{p.password}}</td>
+                                    <td>{{p.role}}</td>
+                                    <td>{{p.email}}</td>
+                                        <td>{{p.adminInfoVo.nom}}</td>
+                                        <td>{{p.laureatInfoVo.cne}}</td>
+                                        <td>{{p.etudiantInfoVo.cne}}</td>
+                                        <td>{{p.professeurInfoVo.code}}</td>
+                                        <td>{{p.reponsesVo.reponse}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removedestinataire(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editMessage()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

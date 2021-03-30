@@ -1,0 +1,90 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit Publication </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>contenu</label>
+                    <input type="text" class="form-control" [placeholder]="publication.contenu" [(ngModel)] = "publication.contenu">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>verified</label>
+                    <select class="form-control" [(ngModel)] = "publication.verified">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [placeholder]="publication.ref" [(ngModel)] = "publication.ref">
+                </div>
+            </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>postePar</label>
+                    <select class="form-control" [(ngModel)]="publication.posteParVo.email" >
+                        <option *ngFor="let p of postePars" [ngValue]="p.email" value="{{p.email}}">{{p.email}}</option>
+                    </select>
+                </div>
+                <div class="card row">
+                    <div class="card-header">Add commentaire</div>
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6 py-2"><label>comref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "commentaire.comref" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>contenu</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "commentaire.contenu" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>publication ref</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "commentaire.publicationVo.ref">
+                                    </div>
+                                    <div class="col-md-6 py-2"><label>postePar email</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "commentaire.posteParVo.email">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addcommentaire()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row m-md-2 p-md-1 table-responsive">
+                    <div class="card-header">Added commentaires</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                    <th>comref</th>
+                                    <th>contenu</th>
+                                    <th>publication ref</th>
+                                    <th>postePar email</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of publication.commentaireVo;let i = index">
+                                    <td>{{p.comref}}</td>
+                                    <td>{{p.contenu}}</td>
+                                        <td>{{p.publicationVo.ref}}</td>
+                                        <td>{{p.posteParVo.email}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removecommentaire(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editPublication()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

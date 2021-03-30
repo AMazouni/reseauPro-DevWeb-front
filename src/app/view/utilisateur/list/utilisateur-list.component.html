@@ -1,0 +1,153 @@
+
+<div class="container">
+  <div class="row">
+    <div id="accordion" class="col-12 my-3">
+      <div class="card">
+        <div class="card-header border-0 bg-white" id="headingSearch">
+          
+            <button class="btn btn-info  btn-sm fa fa-filter" data-toggle="collapse" data-target="#search" aria-expanded="true" aria-controls="search">
+              <h5 class="float-right">Search Forms</h5>
+            </button>
+         
+        </div>
+
+        <div id="search" class="collapse" aria-labelledby="headingSearch" data-parent="#accordion">
+          <div class="card-body">
+            <div class="container">
+              <div class = "row">
+               <div class="form-row">
+   
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">id</small>
+<input type="text" class="form-control col-12" placeholder="id" [(ngModel)]="utilisateurSearch.id">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">email</small>
+<input type="text" class="form-control col-12" placeholder="email" [(ngModel)]="utilisateurSearch.email">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">password</small>
+<input type="text" class="form-control col-12" placeholder="password" [(ngModel)]="utilisateurSearch.password">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">role</small>
+<input type="text" class="form-control col-12" placeholder="role" [(ngModel)]="utilisateurSearch.role">
+             </div>
+              <div class="input-group  col-4  my-2">
+    <div class="col-5 mx-1 px-1">
+                    <div class="p-grid ui-fluid">
+                        <small class="text-muted">dateNaissance Min</small>
+                        <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "utilisateurSearch.dateNaissanceMin"></p-calendar>
+                    </div>
+    </div>
+    <div class="col-5 mx-1 px-1">
+                    <div class="p-grid ui-fluid">
+                        <small class="text-muted">dateNaissance Max</small>
+                        <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "utilisateurSearch.dateNaissanceMax"></p-calendar>
+                    </div>
+    </div>
+
+             </div>
+              <div class="input-group  col-3  my-2">
+
+                <div class="col-5  mx-1 px-1">
+                    <small class="text-muted col-12">verified</small>
+                    <select class="form-control col-12" [(ngModel)] = "utilisateurSearch.verified">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                 </div>   
+             </div>
+              <div class="input-group  col-3  my-2">
+
+                <div class="col-5  mx-1 px-1">
+                    <small class="text-muted col-12">profilVisible</small>
+                    <select class="form-control col-12" [(ngModel)] = "utilisateurSearch.profilVisible">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                 </div>   
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">about</small>
+<input type="text" class="form-control col-12" placeholder="about" [(ngModel)]="utilisateurSearch.about">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">tel</small>
+<input type="text" class="form-control col-12" placeholder="tel" [(ngModel)]="utilisateurSearch.tel">
+             </div>
+              </div>    
+          </div>
+           <button class="btn btn-info btn-sm fa fa-search float-right px-5 py-2 my-4" (click)="findUtilisateur(utilisateurSearch)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-header bg-transparent">
+    <div class="float-left px-1"> <h5>List of utilisateurs. </h5></div>
+
+          <button class="btn btn-success btn-sm fa fa-plus float-right" (click)="createShow()"> Create a new utilisateur</button>
+          
+    </div>
+    <div class="card-body table-responsive">
+
+      <table class="table table-hover col-md-12">
+        <thead class="thead-dark">
+
+          <th>id</th>
+          <th>email</th>
+          <th>password</th>
+          <th>role</th>
+          <th>dateNaissance</th>
+          <th>verified</th>
+            <th>reponses reference</th>
+            <th>etudiantInfo reference</th>
+            <th>professeurInfo reference</th>
+            <th>laureatInfo reference</th>
+            <th>adminInfo reference</th>
+          <th>profilVisible</th>
+          <th>about</th>
+          <th>tel</th>
+     <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of utilisateurListe">
+
+           <td>{{p.id}}</td>
+           <td>{{p.email}}</td>
+           <td>{{p.password}}</td>
+           <td>{{p.role}}</td>
+           <td>{{p.dateNaissance}}</td>
+           <td>{{p.verified}}</td>
+            <td>{{p.reponsesVo?.reponse}}</td>
+            <td>{{p.etudiantInfoVo?.cne}}</td>
+            <td>{{p.professeurInfoVo?.code}}</td>
+            <td>{{p.laureatInfoVo?.cne}}</td>
+            <td>{{p.adminInfoVo?.nom}}</td>
+           <td>{{p.profilVisible}}</td>
+           <td>{{p.about}}</td>
+           <td>{{p.tel}}</td>
+ 
+
+<td><button class="btn btn-danger btn-sm fa fa-trash mx-md-1" (click)="delete(p)"></button>
+  <button class="btn btn-warning btn-sm fa fa-external-link mx-md-1" (click)="detailShow(p)"></button>
+    <button class="btn btn-info btn-sm fa fa-pencil mx-md-1" (click)="editShow(p)"></button>
+  
+  
+
+</td>
+
+</tr>
+  <app-utilisateur-edit *ngIf="utilisateurShowEdit"></app-utilisateur-edit>
+  <app-utilisateur-create *ngIf="utilisateurShowCreate"></app-utilisateur-create>
+<app-utilisateur-details *ngIf="utilisateurShowDetail"></app-utilisateur-details>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,56 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit Fonction </h5>
+        <button type="button" class="close" aria-label="Close" (click)="editHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+   
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                        <label>deteFin</label>
+                        <input type="date" class="col-md-12" [(ngModel)] = "fonction.deteFin">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>titre</label>
+                    <input type="text" class="form-control" [placeholder]="fonction.titre" [(ngModel)] = "fonction.titre">
+                </div>
+                <div class="col-md-6 py-2">
+                        <label>dateDebut</label>
+                        <input type="date" class="col-md-12" [(ngModel)] = "fonction.dateDebut">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>description</label>
+                    <input type="text" class="form-control" [placeholder]="fonction.description" [(ngModel)] = "fonction.description">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [placeholder]="fonction.ref" [(ngModel)] = "fonction.ref">
+                </div>
+            </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>entreprise</label>
+                    <select class="form-control" [(ngModel)]="fonction.entrepriseVo.ref" >
+                        <option *ngFor="let p of entreprises" [ngValue]="p.ref" value="{{p.ref}}">{{p.ref}}</option>
+                    </select>
+                </div>
+                <div class="row m-md-2 p-md-1" >
+                    <label>occupePar</label>
+                    <select class="form-control" [(ngModel)]="fonction.occupeParVo.cne" >
+                        <option *ngFor="let p of occupePars" [ngValue]="p.cne" value="{{p.cne}}">{{p.cne}}</option>
+                    </select>
+                </div>
+        <div class="card-footer" >
+            <button class="form-control" (click)="editFonction()" >Edit</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

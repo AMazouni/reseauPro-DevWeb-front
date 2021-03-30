@@ -1,0 +1,103 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;background-color: #000000bf;">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Entreprise </h5>
+        <button type="button" class="close" aria-label="Close" (click)="createHide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="card col-md-12 mx-auto  p-md-2">
+    
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-6 py-2">
+                    <label>Localisation</label>
+                    <input type="text" class="form-control" [(ngModel)] = "entreprise.Localisation">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>description</label>
+                    <input type="text" class="form-control" [(ngModel)] = "entreprise.description">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>ref</label>
+                    <input type="text" class="form-control" [(ngModel)] = "entreprise.ref">
+                </div>
+                <div class="col-md-6 py-2">
+                    <label>nom</label>
+                    <input type="text" class="form-control" [(ngModel)] = "entreprise.nom">
+                </div>
+        </div>
+                <div class="card row">
+                    <div class="card-header">Add fonctionsLaureat</div>
+                    <div class="card-body">
+                        <div class="row">
+                                    <div class="col-md-6 py-2">
+                                        <div class="p-grid ui-fluid">
+                                            <label>deteFin</label>
+                                            <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "fonctionsLaureat.deteFin"></p-calendar>
+                                        </div>
+                                    </div>
+                                <div class="col-md-6 py-2"><label>titre</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "fonctionsLaureat.titre" >
+                                </div>
+                                    <div class="col-md-6 py-2">
+                                        <div class="p-grid ui-fluid">
+                                            <label>dateDebut</label>
+                                            <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "fonctionsLaureat.dateDebut"></p-calendar>
+                                        </div>
+                                    </div>
+                                <div class="col-md-6 py-2"><label>description</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "fonctionsLaureat.description" >
+                                </div>
+                                <div class="col-md-6 py-2"><label>ref</label>
+                                    <input type="text" class="form-control" [(ngModel)] = "fonctionsLaureat.ref" >
+                                </div>
+                                    <div class="col-md-6 py-2"><label>occupePar cne</label>
+                                        <input type="text" class="form-control" [(ngModel)] = "fonctionsLaureat.occupeParVo.cne">
+                                    </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-danger btn-block" (click)="addFonction()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card row table-responsive">
+                    <div class="card-header">Added fonctionsLaureats</div>
+                    <div class="card-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>deteFin</th>
+                                <th>titre</th>
+                                <th>dateDebut</th>
+                                <th>description</th>
+                                <th>ref</th>
+                                    <th>entreprise ref</th>
+                                    <th>occupePar cne</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of entreprise.fonctionsLaureatVo;let i = index">
+                                    <td>{{p.deteFin}}</td>
+                                    <td>{{p.titre}}</td>
+                                    <td>{{p.dateDebut}}</td>
+                                    <td>{{p.description}}</td>
+                                    <td>{{p.ref}}</td>
+                                        <td>{{p.entrepriseVo.ref}}</td>
+                                        <td>{{p.occupeParVo.cne}}</td>
+                                    <td><button class="btn btn-dark fa fa-trash" (click)="removeFonction(i)"></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <div class="modal-footer" >
+            <button class="form-control" (click)="saveEntreprise()" >Save</button>
+        </div>
+    </div>
+</div>
+       </div>
+	   </div>
+	   </div>
+	   </div>

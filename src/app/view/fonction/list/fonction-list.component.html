@@ -1,0 +1,140 @@
+
+<div class="container">
+  <div class="row">
+    <div id="accordion" class="col-12 my-3">
+      <div class="card">
+        <div class="card-header border-0 bg-white" id="headingSearch">
+          
+            <button class="btn btn-info  btn-sm fa fa-filter" data-toggle="collapse" data-target="#search" aria-expanded="true" aria-controls="search">
+              <h5 class="float-right">Search Forms</h5>
+            </button>
+         
+        </div>
+
+        <div id="search" class="collapse" aria-labelledby="headingSearch" data-parent="#accordion">
+          <div class="card-body">
+            <div class="container">
+              <div class = "row">
+               <div class="form-row">
+   
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">id</small>
+<input type="text" class="form-control col-12" placeholder="id" [(ngModel)]="fonctionSearch.id">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">ref</small>
+<input type="text" class="form-control col-12" placeholder="ref" [(ngModel)]="fonctionSearch.ref">
+             </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">titre</small>
+<input type="text" class="form-control col-12" placeholder="titre" [(ngModel)]="fonctionSearch.titre">
+             </div>
+              <div class="input-group  col-4  my-2">
+    <div class="col-5 mx-1 px-1">
+                    <div class="p-grid ui-fluid">
+                        <small class="text-muted">dateDebut Min</small>
+                        <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "fonctionSearch.dateDebutMin"></p-calendar>
+                    </div>
+    </div>
+    <div class="col-5 mx-1 px-1">
+                    <div class="p-grid ui-fluid">
+                        <small class="text-muted">dateDebut Max</small>
+                        <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "fonctionSearch.dateDebutMax"></p-calendar>
+                    </div>
+    </div>
+
+             </div>
+              <div class="input-group  col-4  my-2">
+    <div class="col-5 mx-1 px-1">
+                    <div class="p-grid ui-fluid">
+                        <small class="text-muted">deteFin Min</small>
+                        <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "fonctionSearch.deteFinMin"></p-calendar>
+                    </div>
+    </div>
+    <div class="col-5 mx-1 px-1">
+                    <div class="p-grid ui-fluid">
+                        <small class="text-muted">deteFin Max</small>
+                        <p-calendar class="p-col-12" dateFormat="yy-mm-dd" [(ngModel)] = "fonctionSearch.deteFinMax"></p-calendar>
+                    </div>
+    </div>
+
+             </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">entreprise</small>
+                    <select class="form-control col-12" [(ngModel)]="fonctionSearch.entrepriseVo" >
+                        <option *ngFor="let p of entreprises" [ngValue]="p" >{{p.ref}}</option>
+                    </select>
+                 </div>
+                <div class="input-group  col-4 my-2">
+                   <small class="text-muted col-12">occupePar</small>
+                    <select class="form-control col-12" [(ngModel)]="fonctionSearch.occupeParVo" >
+                        <option *ngFor="let p of occupePars" [ngValue]="p" >{{p.cne}}</option>
+                    </select>
+                 </div>
+              <div class="input-group  col-3  my-2">
+<small class="text-muted col-12">description</small>
+<input type="text" class="form-control col-12" placeholder="description" [(ngModel)]="fonctionSearch.description">
+             </div>
+              </div>    
+          </div>
+           <button class="btn btn-info btn-sm fa fa-search float-right px-5 py-2 my-4" (click)="findFonction(fonctionSearch)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-header bg-transparent">
+    <div class="float-left px-1"> <h5>List of fonctions. </h5></div>
+
+          <button class="btn btn-success btn-sm fa fa-plus float-right" (click)="createShow()"> Create a new fonction</button>
+          
+    </div>
+    <div class="card-body table-responsive">
+
+      <table class="table table-hover col-md-12">
+        <thead class="thead-dark">
+
+          <th>id</th>
+          <th>ref</th>
+          <th>titre</th>
+          <th>dateDebut</th>
+          <th>deteFin</th>
+            <th>entreprise reference</th>
+            <th>occupePar reference</th>
+          <th>description</th>
+     <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of fonctionListe">
+
+           <td>{{p.id}}</td>
+           <td>{{p.ref}}</td>
+           <td>{{p.titre}}</td>
+           <td>{{p.dateDebut}}</td>
+           <td>{{p.deteFin}}</td>
+            <td>{{p.entrepriseVo?.ref}}</td>
+            <td>{{p.occupeParVo?.cne}}</td>
+           <td>{{p.description}}</td>
+ 
+
+<td><button class="btn btn-danger btn-sm fa fa-trash mx-md-1" (click)="delete(p)"></button>
+  <button class="btn btn-warning btn-sm fa fa-external-link mx-md-1" (click)="detailShow(p)"></button>
+    <button class="btn btn-info btn-sm fa fa-pencil mx-md-1" (click)="editShow(p)"></button>
+  
+  
+
+</td>
+
+</tr>
+  <app-fonction-edit *ngIf="fonctionShowEdit"></app-fonction-edit>
+  <app-fonction-create *ngIf="fonctionShowCreate"></app-fonction-create>
+<app-fonction-details *ngIf="fonctionShowDetail"></app-fonction-details>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
