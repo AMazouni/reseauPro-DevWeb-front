@@ -3,6 +3,15 @@ import {EtudiantInfoVo} from './EtudiantInfo.model';
 import {EtablissementVo} from './Etablissement.model';
 
 export class FormationVo {
+    public _intitule: string;
+    public _ref: string;
+    public _id: string;
+    public _description: string;
+    public _etablissementVo: EtablissementVo ;
+    public _responsableVo: ProfesseurInfoVo ;
+    public _laureatsVo: Array<EtudiantInfoVo> ;
+    public _etudiantsActVo: Array<EtudiantInfoVo>;
+
     get intitule(): string {
         return this._intitule;
     }
@@ -36,7 +45,7 @@ export class FormationVo {
     }
 
     get etablissementVo(): EtablissementVo {
-        if (this._etablissementVo == null) return new EtablissementVo()
+        if (this._etablissementVo == null) { return new EtablissementVo(); }
         return this._etablissementVo;
     }
 
@@ -45,6 +54,7 @@ export class FormationVo {
     }
 
     get responsableVo(): ProfesseurInfoVo {
+        if (this._responsableVo == null) { return new ProfesseurInfoVo(); }
         return this._responsableVo;
     }
 
@@ -53,6 +63,7 @@ export class FormationVo {
     }
 
     get laureatsVo(): Array<EtudiantInfoVo> {
+        if (this._laureatsVo == null) { return new Array<EtudiantInfoVo>(); }
         return this._laureatsVo;
     }
 
@@ -61,20 +72,12 @@ export class FormationVo {
     }
 
     get etudiantsActVo(): Array<EtudiantInfoVo> {
+        if (this._etudiantsActVo == null) { return new Array<EtudiantInfoVo>(); }
         return this._etudiantsActVo;
     }
 
     set etudiantsActVo(value: Array<EtudiantInfoVo>) {
         this._etudiantsActVo = value;
     }
-  public _intitule: string;
-    public _ref: string;
-    public _id: string;
-    public _description: string;
-    public _etablissementVo: EtablissementVo ;
-    public _responsableVo: ProfesseurInfoVo ;
-    public _laureatsVo: Array<EtudiantInfoVo> ;
-    public _etudiantsActVo: Array<EtudiantInfoVo>;
-
 
 }

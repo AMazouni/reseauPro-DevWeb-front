@@ -5,8 +5,8 @@ export class CommentaireVo {
   public _comref: string;
   public _contenu: string;
   public _id: string;
-      public _publicationVo: PublicationVo ;
-      public _posteParVo: UtilisateurVo;
+  public _publicationVo: PublicationVo ;
+  public _posteParVo: UtilisateurVo;
 
 
     get comref(): string {
@@ -22,12 +22,12 @@ export class CommentaireVo {
     }
 
     get publicationVo(): PublicationVo {
-        if(this._publicationVo == null) return new PublicationVo()
+        if (this._publicationVo == null) { return new PublicationVo(); }
         return this._publicationVo;
     }
 
     get posteParVo(): UtilisateurVo {
-        if(this._posteParVo == null) return new UtilisateurVo()
+        if (this._posteParVo == null) { return new UtilisateurVo(); }
         return this._posteParVo;
     }
 

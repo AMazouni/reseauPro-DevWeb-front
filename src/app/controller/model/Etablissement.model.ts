@@ -41,7 +41,7 @@ export class EtablissementVo {
   }
 
   get formationsVo(): Array<FormationVo> {
-    if (this._formationsVo == null) return new Array<FormationVo>()
+    if (this._formationsVo == null) { return new Array<FormationVo>(); }
     return this._formationsVo;
   }
 
