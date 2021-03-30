@@ -67,7 +67,7 @@ set sexeShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<SexeVo>>('http://localhost:8080/generated/sexe/').subscribe(
+  this.http.get<Array<SexeVo>>('http://localhost:8080/uca/reseaupro/sexe/').subscribe(
     value => {
       if (value != null) {
            this.sexeListe = value;
@@ -79,7 +79,7 @@ set sexeShowDetail (value: boolean ) {
 }
 
   public saveSexe() {
-  this.http.post<SexeVo>('http://localhost:8080/generated/sexe/', this.sexe).subscribe(data=>{
+  this.http.post<SexeVo>('http://localhost:8080/uca/reseaupro/sexe/', this.sexe).subscribe(data=>{
     this.createHide();
      this.sexeListe.push(data);
 
@@ -87,14 +87,14 @@ set sexeShowDetail (value: boolean ) {
   }
 
   public editSexe() {
-  this.http.put<SexeVo>('http://localhost:8080/generated/sexe/', this.sexe).subscribe(data=>{
+  this.http.put<SexeVo>('http://localhost:8080/uca/reseaupro/sexe/', this.sexe).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findSexe ( pojo : SexeVo ){
-  this.http.post<Array<SexeVo>>('http://localhost:8080/generated/sexe/search/', pojo).subscribe(
+  this.http.post<Array<SexeVo>>('http://localhost:8080/uca/reseaupro/sexe/search/', pojo).subscribe(
     value =>{
        this.sexeListe = value;  
     } );
@@ -109,7 +109,7 @@ public detailShow ( pojo : SexeVo ){
 
 
 delete(pojo: SexeVo) {
-   this.http.delete<SexeVo>('http://localhost:8080/generated/sexe/id/'+pojo.id).subscribe(
+   this.http.delete<SexeVo>('http://localhost:8080/uca/reseaupro/sexe/id/'+pojo.id).subscribe(
         value => {
         var index = this.sexeListe.indexOf(pojo);
 if (index > -1) {
@@ -123,7 +123,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<SexeVo>('http://localhost:8080/generated/sexe/ref/' + ref).subscribe(
+      this.http.get<SexeVo>('http://localhost:8080/uca/reseaupro/sexe/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.sexe = value; }
         }

@@ -89,7 +89,7 @@ set publicationShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<PublicationVo>>('http://localhost:8080/generated/publication/').subscribe(
+  this.http.get<Array<PublicationVo>>('http://localhost:8080/uca/reseaupro/publication/').subscribe(
     value => {
       if (value != null) {
            this.publicationListe = value;
@@ -101,7 +101,7 @@ set publicationShowDetail (value: boolean ) {
 }
 
   public savePublication() {
-  this.http.post<PublicationVo>('http://localhost:8080/generated/publication/', this.publication).subscribe(data=>{
+  this.http.post<PublicationVo>('http://localhost:8080/uca/reseaupro/publication/', this.publication).subscribe(data=>{
     this.createHide();
      this.publicationListe.push(data);
 
@@ -110,7 +110,7 @@ set publicationShowDetail (value: boolean ) {
   }
 
   public editPublication() {
-  this.http.put<PublicationVo>('http://localhost:8080/generated/publication/', this.publication).subscribe(data=>{
+  this.http.put<PublicationVo>('http://localhost:8080/uca/reseaupro/publication/', this.publication).subscribe(data=>{
     this.editHide();
   });
       this.publication.commentaireVo.length = 0;
@@ -135,7 +135,7 @@ set publicationShowDetail (value: boolean ) {
     this.publication.commentaireVo.splice(i, 1);
   }
    public findPublication ( pojo : PublicationVo ){
-  this.http.post<Array<PublicationVo>>('http://localhost:8080/generated/publication/search/', pojo).subscribe(
+  this.http.post<Array<PublicationVo>>('http://localhost:8080/uca/reseaupro/publication/search/', pojo).subscribe(
     value =>{
        this.publicationListe = value;  
     } );
@@ -150,7 +150,7 @@ public detailShow ( pojo : PublicationVo ){
 
 
 delete(pojo: PublicationVo) {
-   this.http.delete<PublicationVo>('http://localhost:8080/generated/publication/id/'+pojo.id).subscribe(
+   this.http.delete<PublicationVo>('http://localhost:8080/uca/reseaupro/publication/id/'+pojo.id).subscribe(
         value => {
         var index = this.publicationListe.indexOf(pojo);
 if (index > -1) {
@@ -164,7 +164,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<PublicationVo>('http://localhost:8080/generated/publication/ref/' + ref).subscribe(
+      this.http.get<PublicationVo>('http://localhost:8080/uca/reseaupro/publication/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.publication = value; }
         }
@@ -172,7 +172,7 @@ if (index > -1) {
         }
 
             public findAllpostePars() {
-             this.http.get<Array<UtilisateurVo>>('http://localhost:8080/generated/utilisateur/').subscribe(
+             this.http.get<Array<UtilisateurVo>>('http://localhost:8080/uca/reseaupro/utilisateur/').subscribe(
             value => {
             if (value != null) { this.postePars = value; }
             }

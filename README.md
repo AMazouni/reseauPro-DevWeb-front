@@ -1,4 +1,4 @@
-List of commandes to run before using the generated Angular: 
+List of commandes to run before using the uca/reseaupro Angular: 
 >npm install (for all the normally needed node_modules)
 >
 >npm install bootstrap font-awesome --save
@@ -12,7 +12,7 @@ List of commandes to run before using the generated Angular:
 You can run the angular project using:
 >ng serve -o --port 4201
 
-If you are using our generated back-end make sure to change the
+If you are using our uca/reseaupro back-end make sure to change the
 port in the CorsConfig Class in the back-end to the port you
 are using here.
 

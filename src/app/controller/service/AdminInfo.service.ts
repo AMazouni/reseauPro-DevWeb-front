@@ -68,7 +68,7 @@ set adminInfoShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<AdminInfoVo>>('http://localhost:8080/generated/adminInfo/').subscribe(
+  this.http.get<Array<AdminInfoVo>>('http://localhost:8080/uca/reseaupro/adminInfo/').subscribe(
     value => {
       if (value != null) {
            this.adminInfoListe = value;
@@ -80,7 +80,7 @@ set adminInfoShowDetail (value: boolean ) {
 }
 
   public saveAdminInfo() {
-  this.http.post<AdminInfoVo>('http://localhost:8080/generated/adminInfo/', this.adminInfo).subscribe(data=>{
+  this.http.post<AdminInfoVo>('http://localhost:8080/uca/reseaupro/adminInfo/', this.adminInfo).subscribe(data=>{
     this.createHide();
      this.adminInfoListe.push(data);
 
@@ -88,14 +88,14 @@ set adminInfoShowDetail (value: boolean ) {
   }
 
   public editAdminInfo() {
-  this.http.put<AdminInfoVo>('http://localhost:8080/generated/adminInfo/', this.adminInfo).subscribe(data=>{
+  this.http.put<AdminInfoVo>('http://localhost:8080/uca/reseaupro/adminInfo/', this.adminInfo).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findAdminInfo ( pojo : AdminInfoVo ){
-  this.http.post<Array<AdminInfoVo>>('http://localhost:8080/generated/adminInfo/search/', pojo).subscribe(
+  this.http.post<Array<AdminInfoVo>>('http://localhost:8080/uca/reseaupro/adminInfo/search/', pojo).subscribe(
     value =>{
        this.adminInfoListe = value;  
     } );
@@ -110,7 +110,7 @@ public detailShow ( pojo : AdminInfoVo ){
 
 
 delete(pojo: AdminInfoVo) {
-   this.http.delete<AdminInfoVo>('http://localhost:8080/generated/adminInfo/id/'+pojo.id).subscribe(
+   this.http.delete<AdminInfoVo>('http://localhost:8080/uca/reseaupro/adminInfo/id/'+pojo.id).subscribe(
         value => {
         var index = this.adminInfoListe.indexOf(pojo);
 if (index > -1) {
@@ -124,7 +124,7 @@ if (index > -1) {
 
 
        public findBynom(ref: string) {
-      this.http.get<AdminInfoVo>('http://localhost:8080/generated/adminInfo/nom/' + ref).subscribe(
+      this.http.get<AdminInfoVo>('http://localhost:8080/uca/reseaupro/adminInfo/nom/' + ref).subscribe(
         value => {
         if (value != null) { this.adminInfo = value; }
         }

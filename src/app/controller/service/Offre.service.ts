@@ -90,7 +90,7 @@ set offreShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<OffreVo>>('http://localhost:8080/generated/offre/').subscribe(
+  this.http.get<Array<OffreVo>>('http://localhost:8080/uca/reseaupro/offre/').subscribe(
     value => {
       if (value != null) {
            this.offreListe = value;
@@ -102,7 +102,7 @@ set offreShowDetail (value: boolean ) {
 }
 
   public saveOffre() {
-  this.http.post<OffreVo>('http://localhost:8080/generated/offre/', this.offre).subscribe(data=>{
+  this.http.post<OffreVo>('http://localhost:8080/uca/reseaupro/offre/', this.offre).subscribe(data=>{
     this.createHide();
      this.offreListe.push(data);
 
@@ -111,7 +111,7 @@ set offreShowDetail (value: boolean ) {
   }
 
   public editOffre() {
-  this.http.put<OffreVo>('http://localhost:8080/generated/offre/', this.offre).subscribe(data=>{
+  this.http.put<OffreVo>('http://localhost:8080/uca/reseaupro/offre/', this.offre).subscribe(data=>{
     this.editHide();
   });
       this.offre.candidaturesVo.length = 0;
@@ -137,7 +137,7 @@ set offreShowDetail (value: boolean ) {
     this.offre.candidaturesVo.splice(i, 1);
   }
    public findOffre ( pojo : OffreVo ){
-  this.http.post<Array<OffreVo>>('http://localhost:8080/generated/offre/search/', pojo).subscribe(
+  this.http.post<Array<OffreVo>>('http://localhost:8080/uca/reseaupro/offre/search/', pojo).subscribe(
     value =>{
        this.offreListe = value;  
     } );
@@ -152,7 +152,7 @@ public detailShow ( pojo : OffreVo ){
 
 
 delete(pojo: OffreVo) {
-   this.http.delete<OffreVo>('http://localhost:8080/generated/offre/id/'+pojo.id).subscribe(
+   this.http.delete<OffreVo>('http://localhost:8080/uca/reseaupro/offre/id/'+pojo.id).subscribe(
         value => {
         var index = this.offreListe.indexOf(pojo);
 if (index > -1) {
@@ -166,7 +166,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<OffreVo>('http://localhost:8080/generated/offre/ref/' + ref).subscribe(
+      this.http.get<OffreVo>('http://localhost:8080/uca/reseaupro/offre/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.offre = value; }
         }
@@ -174,7 +174,7 @@ if (index > -1) {
         }
 
             public findAlltagss() {
-             this.http.get<Array<OffreTagsVo>>('http://localhost:8080/generated/offreTags/').subscribe(
+             this.http.get<Array<OffreTagsVo>>('http://localhost:8080/uca/reseaupro/offreTags/').subscribe(
             value => {
             if (value != null) { this.tagss = value; }
             }

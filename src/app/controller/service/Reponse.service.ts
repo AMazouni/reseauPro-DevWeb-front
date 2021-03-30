@@ -76,7 +76,7 @@ set reponseShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<ReponseVo>>('http://localhost:8080/generated/reponse/').subscribe(
+  this.http.get<Array<ReponseVo>>('http://localhost:8080/uca/reseaupro/reponse/').subscribe(
     value => {
       if (value != null) {
            this.reponseListe = value;
@@ -88,7 +88,7 @@ set reponseShowDetail (value: boolean ) {
 }
 
   public saveReponse() {
-  this.http.post<ReponseVo>('http://localhost:8080/generated/reponse/', this.reponse).subscribe(data=>{
+  this.http.post<ReponseVo>('http://localhost:8080/uca/reseaupro/reponse/', this.reponse).subscribe(data=>{
     this.createHide();
      this.reponseListe.push(data);
 
@@ -96,14 +96,14 @@ set reponseShowDetail (value: boolean ) {
   }
 
   public editReponse() {
-  this.http.put<ReponseVo>('http://localhost:8080/generated/reponse/', this.reponse).subscribe(data=>{
+  this.http.put<ReponseVo>('http://localhost:8080/uca/reseaupro/reponse/', this.reponse).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findReponse ( pojo : ReponseVo ){
-  this.http.post<Array<ReponseVo>>('http://localhost:8080/generated/reponse/search/', pojo).subscribe(
+  this.http.post<Array<ReponseVo>>('http://localhost:8080/uca/reseaupro/reponse/search/', pojo).subscribe(
     value =>{
        this.reponseListe = value;  
     } );
@@ -118,7 +118,7 @@ public detailShow ( pojo : ReponseVo ){
 
 
 delete(pojo: ReponseVo) {
-   this.http.delete<ReponseVo>('http://localhost:8080/generated/reponse/id/'+pojo.id).subscribe(
+   this.http.delete<ReponseVo>('http://localhost:8080/uca/reseaupro/reponse/id/'+pojo.id).subscribe(
         value => {
         var index = this.reponseListe.indexOf(pojo);
 if (index > -1) {
@@ -132,7 +132,7 @@ if (index > -1) {
 
 
        public findByreponse(ref: string) {
-      this.http.get<ReponseVo>('http://localhost:8080/generated/reponse/reponse/' + ref).subscribe(
+      this.http.get<ReponseVo>('http://localhost:8080/uca/reseaupro/reponse/reponse/' + ref).subscribe(
         value => {
         if (value != null) { this.reponse = value; }
         }
@@ -140,7 +140,7 @@ if (index > -1) {
         }
 
             public findAllquestions() {
-             this.http.get<Array<QuestionVo>>('http://localhost:8080/generated/question/').subscribe(
+             this.http.get<Array<QuestionVo>>('http://localhost:8080/uca/reseaupro/question/').subscribe(
             value => {
             if (value != null) { this.questions = value; }
             }

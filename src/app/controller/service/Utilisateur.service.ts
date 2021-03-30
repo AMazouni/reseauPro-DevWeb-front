@@ -122,7 +122,7 @@ set utilisateurShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<UtilisateurVo>>('http://localhost:8080/generated/utilisateur/').subscribe(
+  this.http.get<Array<UtilisateurVo>>('http://localhost:8080/uca/reseaupro/utilisateur/').subscribe(
     value => {
       if (value != null) {
            this.utilisateurListe = value;
@@ -134,7 +134,7 @@ set utilisateurShowDetail (value: boolean ) {
 }
 
   public saveUtilisateur() {
-  this.http.post<UtilisateurVo>('http://localhost:8080/generated/utilisateur/', this.utilisateur).subscribe(data=>{
+  this.http.post<UtilisateurVo>('http://localhost:8080/uca/reseaupro/utilisateur/', this.utilisateur).subscribe(data=>{
     this.createHide();
      this.utilisateurListe.push(data);
 
@@ -146,7 +146,7 @@ set utilisateurShowDetail (value: boolean ) {
   }
 
   public editUtilisateur() {
-  this.http.put<UtilisateurVo>('http://localhost:8080/generated/utilisateur/', this.utilisateur).subscribe(data=>{
+  this.http.put<UtilisateurVo>('http://localhost:8080/uca/reseaupro/utilisateur/', this.utilisateur).subscribe(data=>{
     this.editHide();
   });
       this.utilisateur.messagesRecusVo.length = 0;
@@ -227,7 +227,7 @@ set utilisateurShowDetail (value: boolean ) {
     this.utilisateur.publicationsRedigesVo.splice(i, 1);
   }
    public findUtilisateur ( pojo : UtilisateurVo ){
-  this.http.post<Array<UtilisateurVo>>('http://localhost:8080/generated/utilisateur/search/', pojo).subscribe(
+  this.http.post<Array<UtilisateurVo>>('http://localhost:8080/uca/reseaupro/utilisateur/search/', pojo).subscribe(
     value =>{
        this.utilisateurListe = value;  
     } );
@@ -242,7 +242,7 @@ public detailShow ( pojo : UtilisateurVo ){
 
 
 delete(pojo: UtilisateurVo) {
-   this.http.delete<UtilisateurVo>('http://localhost:8080/generated/utilisateur/id/'+pojo.id).subscribe(
+   this.http.delete<UtilisateurVo>('http://localhost:8080/uca/reseaupro/utilisateur/id/'+pojo.id).subscribe(
         value => {
         var index = this.utilisateurListe.indexOf(pojo);
 if (index > -1) {
@@ -256,7 +256,7 @@ if (index > -1) {
 
 
        public findByemail(ref: string) {
-      this.http.get<UtilisateurVo>('http://localhost:8080/generated/utilisateur/email/' + ref).subscribe(
+      this.http.get<UtilisateurVo>('http://localhost:8080/uca/reseaupro/utilisateur/email/' + ref).subscribe(
         value => {
         if (value != null) { this.utilisateur = value; }
         }
