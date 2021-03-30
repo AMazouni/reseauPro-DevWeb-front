@@ -14,7 +14,7 @@ export class EtudiantInfoVo {
   public _id: string;
      public _anneFinEtudeMax: string ;
      public _anneFinEtudeMin: string ;
-      public _sexeVo: SexeVo = new SexeVo();
+      public _sexeVo: SexeVo;
       public _formationActuelleVo: FormationVo;
       public _fonctionActuelleVo: FonctionVo ;
       public _compteVo: UtilisateurVo;
@@ -25,7 +25,7 @@ export class EtudiantInfoVo {
 
 
     get anneFinEtude(): string {
-        if (this._anneFinEtude == '') return "0"
+        if (this._anneFinEtude === '') { return '0'; }
         return this._anneFinEtude;
     }
 
@@ -99,7 +99,7 @@ export class EtudiantInfoVo {
     }
 
     get sexeVo(): SexeVo {
-        if(this._sexeVo == null) return new SexeVo()
+        if (this._sexeVo == null) { return new SexeVo(); }
         return this._sexeVo;
     }
 
@@ -109,7 +109,7 @@ export class EtudiantInfoVo {
     }
 
     get formationActuelleVo(): FormationVo {
-        if(this._formationActuelleVo == null) return new FormationVo()
+        if (this._formationActuelleVo == null) { return new FormationVo(); }
         return this._formationActuelleVo;
     }
 
@@ -118,7 +118,7 @@ export class EtudiantInfoVo {
     }
 
     get fonctionActuelleVo(): FonctionVo {
-        if(this._fonctionActuelleVo == null) return new FonctionVo()
+        if (this._fonctionActuelleVo == null) { return new FonctionVo(); }
         return this._fonctionActuelleVo;
     }
 
@@ -127,7 +127,7 @@ export class EtudiantInfoVo {
     }
 
     get compteVo(): UtilisateurVo {
-        if(this._compteVo == null) return new UtilisateurVo()
+        if (this._compteVo == null) { return new UtilisateurVo(); }
         return this._compteVo;
     }
 
@@ -136,7 +136,7 @@ export class EtudiantInfoVo {
     }
 
     get experiencesProVo(): Array<FonctionVo> {
-        if(this._experiencesProVo == null) return new Array<FonctionVo>()
+        if (this._experiencesProVo == null) { return new Array<FonctionVo>(); }
         return this._experiencesProVo;
     }
 
@@ -145,7 +145,7 @@ export class EtudiantInfoVo {
     }
 
     get formationsVo(): Array<FormationVo> {
-        if (this._formationsVo == null) return new Array<FormationVo>()
+        if (this._formationsVo == null) { return new Array<FormationVo>(); }
         return this._formationsVo;
     }
 
@@ -154,7 +154,7 @@ export class EtudiantInfoVo {
     }
 
     get demandeRecuVo(): Array<DemandeVo> {
-        if(this._demandeRecuVo == null) return new Array<DemandeVo>()
+        if (this._demandeRecuVo == null) { return new Array<DemandeVo>(); }
         return this._demandeRecuVo;
     }
 
@@ -163,7 +163,7 @@ export class EtudiantInfoVo {
     }
 
     get demandesEnvoyeVo(): Array<DemandeVo> {
-        if(this._demandesEnvoyeVo == null) return new Array<DemandeVo>()
+        if (this._demandesEnvoyeVo == null) { return new Array<DemandeVo>(); }
         return this._demandesEnvoyeVo;
     }
 

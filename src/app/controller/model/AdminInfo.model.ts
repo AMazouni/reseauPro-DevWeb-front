@@ -5,7 +5,7 @@ export class AdminInfoVo {
   public _prenom: string;
   public _code: string;
   public _id: string;
-      public _compteVo: UtilisateurVo ;
+      public _compteVo: UtilisateurVo;
 
 
     get nom(): string {
@@ -41,7 +41,7 @@ export class AdminInfoVo {
     }
 
     get compteVo(): UtilisateurVo {
-        if (this._compteVo == null) return new UtilisateurVo()
+        if (this._compteVo == null) { return new UtilisateurVo(); }
         return this._compteVo;
     }
 
