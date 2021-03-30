@@ -1,60 +1,60 @@
 import {FonctionVo} from './Fonction.model';
 
 export class EntrepriseVo {
-  public _Localisation: string;
-  public _description: string;
-  public _ref: string;
-  public _nom: string;
-  public _id: string;
-  public _fonctionsLaureatVo: Array<FonctionVo> = new Array<FonctionVo>();
+  public Localisation: string;
+  public description: string;
+  public ref: string;
+  public nom: string;
+  public id: string;
+  public fonctionsLaureatVo: Array<FonctionVo> = new Array<FonctionVo>();
 
 
-  get Localisation(): string {
-    return this._Localisation;
+  get __Localisation(): string {
+    return this.Localisation;
   }
 
-  set Localisation(value: string) {
-    this._Localisation = value;
+  set __Localisation(value: string) {
+    this.Localisation = value;
   }
 
-  get description(): string {
-    return this._description;
+  get __description(): string {
+    return this.description;
   }
 
-  set description(value: string) {
-    this._description = value;
+  set __description(value: string) {
+    this.description = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get nom(): string {
-    return this._nom;
+  get __nom(): string {
+    return this.nom;
   }
 
-  set nom(value: string) {
-    this._nom = value;
+  set __nom(value: string) {
+    this.nom = value;
   }
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 
-  get fonctionsLaureatVo(): Array<FonctionVo> {
-    if (this._fonctionsLaureatVo == null) {return new Array<FonctionVo>(); }
-    return this._fonctionsLaureatVo;
+  get __fonctionsLaureatVo(): Array<FonctionVo> {
+    if (this.fonctionsLaureatVo == null) {return new Array<FonctionVo>(); }
+    return this.fonctionsLaureatVo;
   }
 
-  set fonctionsLaureatVo(value: Array<FonctionVo>) {
-    this._fonctionsLaureatVo = value;
+  set __fonctionsLaureatVo(value: Array<FonctionVo>) {
+    this.fonctionsLaureatVo = value;
   }
 }

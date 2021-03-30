@@ -8,194 +8,194 @@ import {PublicationVo} from './Publication.model';
 import {AdminInfoVo} from './AdminInfo.model';
 
 export class UtilisateurVo {
-  public _verified: string;
-  public _about: string;
-  public _dateNaissance: string;
-  public _profilVisible: string;
-  public _tel: string;
-  public _password: string;
-  public _role: string;
-  public _email: string;
-  public _id: string;
-     public _dateNaissanceMax: string ;
-     public _dateNaissanceMin: string ;
-      public _adminInfoVo: AdminInfoVo;
-      public _laureatInfoVo: EtudiantInfoVo;
-      public _etudiantInfoVo: EtudiantInfoVo;
-      public _professeurInfoVo: ProfesseurInfoVo;
-      public _reponsesVo: ReponseVo;
-  public _messagesRecusVo: Array<MessageVo>;
-  public _messagesEnvoyeVo: Array<MessageVo>;
-  public _comRedigesVo: Array<CommentaireVo>;
-  public _publicationsRedigesVo: Array<PublicationVo>;
+  public verified: string;
+  public about: string;
+  public dateNaissance: string;
+  public profilVisible: string;
+  public tel: string;
+  public password: string;
+  public role: string;
+  public email: string;
+  public id: string;
+     public dateNaissanceMax: string ;
+     public dateNaissanceMin: string ;
+      public adminInfoVo: AdminInfoVo;
+      public laureatInfoVo: EtudiantInfoVo;
+      public etudiantInfoVo: EtudiantInfoVo;
+      public professeurInfoVo: ProfesseurInfoVo;
+      public reponsesVo: ReponseVo;
+  public messagesRecusVo: Array<MessageVo>;
+  public messagesEnvoyeVo: Array<MessageVo>;
+  public comRedigesVo: Array<CommentaireVo>;
+  public publicationsRedigesVo: Array<PublicationVo>;
 
 
-    get verified(): string {
-        return this._verified;
+    get __verified(): string {
+        return this.verified;
     }
 
-    set verified(value: string) {
-        this._verified = value;
+    set __verified(value: string) {
+        this.verified = value;
     }
 
-    get about(): string {
-        return this._about;
+    get __about(): string {
+        return this.about;
     }
 
-    set about(value: string) {
-        this._about = value;
+    set __about(value: string) {
+        this.about = value;
     }
 
-    get dateNaissance(): string {
-        return this._dateNaissance;
+    get __dateNaissance(): string {
+        return this.dateNaissance;
     }
 
-    set dateNaissance(value: string) {
-        this._dateNaissance = value;
+    set __dateNaissance(value: string) {
+        this.dateNaissance = value;
     }
 
-    get profilVisible(): string {
-        return this._profilVisible;
+    get __profilVisible(): string {
+        return this.profilVisible;
     }
 
-    set profilVisible(value: string) {
-        this._profilVisible = value;
+    set __profilVisible(value: string) {
+        this.profilVisible = value;
     }
 
-    get tel(): string {
-        return this._tel;
+    get __tel(): string {
+        return this.tel;
     }
 
-    set tel(value: string) {
-        this._tel = value;
+    set __tel(value: string) {
+        this.tel = value;
     }
 
-    get password(): string {
-        return this._password;
+    get __password(): string {
+        return this.password;
     }
 
-    set password(value: string) {
-        this._password = value;
+    set __password(value: string) {
+        this.password = value;
     }
 
-    get role(): string {
-        return this._role;
+    get __role(): string {
+        return this.role;
     }
 
-    set role(value: string) {
-        this._role = value;
+    set __role(value: string) {
+        this.role = value;
     }
 
-    get email(): string {
-        return this._email;
+    get __email(): string {
+        return this.email;
     }
 
-    set email(value: string) {
-        this._email = value;
+    set __email(value: string) {
+        this.email = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get dateNaissanceMax(): string {
-        return this._dateNaissanceMax;
+    get __dateNaissanceMax(): string {
+        return this.dateNaissanceMax;
     }
 
-    set dateNaissanceMax(value: string) {
-        this._dateNaissanceMax = value;
+    set __dateNaissanceMax(value: string) {
+        this.dateNaissanceMax = value;
     }
 
-    get dateNaissanceMin(): string {
-        return this._dateNaissanceMin;
+    get __dateNaissanceMin(): string {
+        return this.dateNaissanceMin;
     }
 
-    set dateNaissanceMin(value: string) {
-        this._dateNaissanceMin = value;
+    set __dateNaissanceMin(value: string) {
+        this.dateNaissanceMin = value;
     }
 
-    get adminInfoVo(): AdminInfoVo {
-        if (this._adminInfoVo == null) { return new AdminInfoVo(); }
-        return this._adminInfoVo;
+    get __adminInfoVo(): AdminInfoVo {
+        if (this.adminInfoVo == null) { return new AdminInfoVo(); }
+        return this.adminInfoVo;
     }
 
-    set adminInfoVo(value: AdminInfoVo) {
-        this._adminInfoVo = value;
+    set __adminInfoVo(value: AdminInfoVo) {
+        this.adminInfoVo = value;
     }
 
-    get laureatInfoVo(): EtudiantInfoVo {
-        if (this._laureatInfoVo == null) { return new EtudiantInfoVo(); }
-        return this._laureatInfoVo;
+    get __laureatInfoVo(): EtudiantInfoVo {
+        if (this.laureatInfoVo == null) { return new EtudiantInfoVo(); }
+        return this.laureatInfoVo;
     }
 
-    set laureatInfoVo(value: EtudiantInfoVo) {
-        this._laureatInfoVo = value;
+    set __laureatInfoVo(value: EtudiantInfoVo) {
+        this.laureatInfoVo = value;
     }
 
-    get etudiantInfoVo(): EtudiantInfoVo {
-        if (this._etudiantInfoVo == null) { return new EtudiantInfoVo(); }
-        return this._etudiantInfoVo;
+    get __etudiantInfoVo(): EtudiantInfoVo {
+        if (this.etudiantInfoVo == null) { return new EtudiantInfoVo(); }
+        return this.etudiantInfoVo;
     }
 
-    set etudiantInfoVo(value: EtudiantInfoVo) {
-        this._etudiantInfoVo = value;
+    set __etudiantInfoVo(value: EtudiantInfoVo) {
+        this.etudiantInfoVo = value;
     }
 
-    get professeurInfoVo(): ProfesseurInfoVo {
-        if (this._professeurInfoVo == null) { return new ProfesseurInfoVo(); }
-        return this._professeurInfoVo;
+    get __professeurInfoVo(): ProfesseurInfoVo {
+        if (this.professeurInfoVo == null) { return new ProfesseurInfoVo(); }
+        return this.professeurInfoVo;
     }
 
-    set professeurInfoVo(value: ProfesseurInfoVo) {
-        this._professeurInfoVo = value;
+    set __professeurInfoVo(value: ProfesseurInfoVo) {
+        this.professeurInfoVo = value;
     }
 
-    get reponsesVo(): ReponseVo {
-        if (this._reponsesVo == null) { return new ReponseVo(); }
-        return this._reponsesVo;
+    get __reponsesVo(): ReponseVo {
+        if (this.reponsesVo == null) { return new ReponseVo(); }
+        return this.reponsesVo;
     }
 
-    set reponsesVo(value: ReponseVo) {
-        this._reponsesVo = value;
+    set __reponsesVo(value: ReponseVo) {
+        this.reponsesVo = value;
     }
 
-    get messagesRecusVo(): Array<MessageVo> {
-        if (this._messagesRecusVo == null) { return new Array<MessageVo>(); }
-        return this._messagesRecusVo;
+    get __messagesRecusVo(): Array<MessageVo> {
+        if (this.messagesRecusVo == null) { return new Array<MessageVo>(); }
+        return this.messagesRecusVo;
     }
 
-    set messagesRecusVo(value: Array<MessageVo>) {
-        this._messagesRecusVo = value;
+    set __messagesRecusVo(value: Array<MessageVo>) {
+        this.messagesRecusVo = value;
     }
 
-    get messagesEnvoyeVo(): Array<MessageVo> {
-        if (this._messagesEnvoyeVo == null) { return new Array<MessageVo>(); }
-        return this._messagesEnvoyeVo;
+    get __messagesEnvoyeVo(): Array<MessageVo> {
+        if (this.messagesEnvoyeVo == null) { return new Array<MessageVo>(); }
+        return this.messagesEnvoyeVo;
     }
 
-    set messagesEnvoyeVo(value: Array<MessageVo>) {
-        this._messagesEnvoyeVo = value;
+    set __messagesEnvoyeVo(value: Array<MessageVo>) {
+        this.messagesEnvoyeVo = value;
     }
 
-    get comRedigesVo(): Array<CommentaireVo> {
-        if (this._comRedigesVo == null) { return new Array<CommentaireVo>(); }
-        return this._comRedigesVo;
+    get __comRedigesVo(): Array<CommentaireVo> {
+        if (this.comRedigesVo == null) { return new Array<CommentaireVo>(); }
+        return this.comRedigesVo;
     }
 
-    set comRedigesVo(value: Array<CommentaireVo>) {
-        this._comRedigesVo = value;
+    set __comRedigesVo(value: Array<CommentaireVo>) {
+        this.comRedigesVo = value;
     }
 
-    get publicationsRedigesVo(): Array<PublicationVo> {
-        if (this._publicationsRedigesVo == null) { return new Array<PublicationVo>(); }
-        return this._publicationsRedigesVo;
+    get __publicationsRedigesVo(): Array<PublicationVo> {
+        if (this.publicationsRedigesVo == null) { return new Array<PublicationVo>(); }
+        return this.publicationsRedigesVo;
     }
 
-    set publicationsRedigesVo(value: Array<PublicationVo>) {
-        this._publicationsRedigesVo = value;
+    set __publicationsRedigesVo(value: Array<PublicationVo>) {
+        this.publicationsRedigesVo = value;
     }
 }

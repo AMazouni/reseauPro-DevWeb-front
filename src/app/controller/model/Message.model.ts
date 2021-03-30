@@ -2,71 +2,71 @@ import {DemandeVo} from './Demande.model';
 import {UtilisateurVo} from './Utilisateur.model';
 
 export class MessageVo {
-  public _contenu: string;
-  public _ref: string;
-  public _objet: string;
-  public _id: string;
-  public _emetteurVo: UtilisateurVo = new UtilisateurVo();
-  public _demandeConcerneVo: DemandeVo = new DemandeVo();
-  public _destinataireVo: Array<UtilisateurVo> = new Array<UtilisateurVo>();
+  public contenu: string;
+  public ref: string;
+  public objet: string;
+  public id: string;
+  public emetteurVo: UtilisateurVo = new UtilisateurVo();
+  public demandeConcerneVo: DemandeVo = new DemandeVo();
+  public destinataireVo: Array<UtilisateurVo> = new Array<UtilisateurVo>();
 
 
-    get contenu(): string {
-        return this._contenu;
+    get __contenu(): string {
+        return this.contenu;
     }
 
-    set contenu(value: string) {
-        this._contenu = value;
+    set __contenu(value: string) {
+        this.contenu = value;
     }
 
-    get ref(): string {
-        return this._ref;
+    get __ref(): string {
+        return this.ref;
     }
 
-    set ref(value: string) {
-        this._ref = value;
+    set __ref(value: string) {
+        this.ref = value;
     }
 
-    get objet(): string {
-        return this._objet;
+    get __objet(): string {
+        return this.objet;
     }
 
-    set objet(value: string) {
-        this._objet = value;
+    set __objet(value: string) {
+        this.objet = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get emetteurVo(): UtilisateurVo {
-        if (this._emetteurVo == null) { return new UtilisateurVo(); }
-        return this._emetteurVo;
+    get __emetteurVo(): UtilisateurVo {
+        if (this.emetteurVo == null) { return new UtilisateurVo(); }
+        return this.emetteurVo;
     }
 
-    set emetteurVo(value: UtilisateurVo) {
-        this._emetteurVo = value;
+    set __emetteurVo(value: UtilisateurVo) {
+        this.emetteurVo = value;
     }
 
-    get demandeConcerneVo(): DemandeVo {
-        if (this._demandeConcerneVo == null) { return new DemandeVo(); }
-        return this._demandeConcerneVo;
+    get __demandeConcerneVo(): DemandeVo {
+        if (this.demandeConcerneVo == null) { return new DemandeVo(); }
+        return this.demandeConcerneVo;
     }
 
-    set demandeConcerneVo(value: DemandeVo) {
-        this._demandeConcerneVo = value;
+    set __demandeConcerneVo(value: DemandeVo) {
+        this.demandeConcerneVo = value;
     }
 
-    get destinataireVo(): Array<UtilisateurVo> {
-        if (this._destinataireVo == null) { return new Array<UtilisateurVo>(); }
-        return this._destinataireVo;
+    get __destinataireVo(): Array<UtilisateurVo> {
+        if (this.destinataireVo == null) { return new Array<UtilisateurVo>(); }
+        return this.destinataireVo;
     }
 
-    set destinataireVo(value: Array<UtilisateurVo>) {
-        this._destinataireVo = value;
+    set __destinataireVo(value: Array<UtilisateurVo>) {
+        this.destinataireVo = value;
     }
 }

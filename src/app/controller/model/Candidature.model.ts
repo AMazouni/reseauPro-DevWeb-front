@@ -3,62 +3,62 @@ import {EtudiantInfoVo} from './EtudiantInfo.model';
 import {OffreVo} from './Offre.model';
 
 export class CandidatureVo {
-  public _lettreMotivation: string;
-  public _ref: string;
-  public _id: string;
-  public _candidatVo: EtudiantInfoVo = new EtudiantInfoVo();
-  public _statusVo: StatusVo = new StatusVo();
-  public _offreConcerneVo: OffreVo = new OffreVo();
+  public lettreMotivation: string;
+  public ref: string;
+  public id: string;
+  public candidatVo: EtudiantInfoVo = new EtudiantInfoVo();
+  public statusVo: StatusVo = new StatusVo();
+  public offreConcerneVo: OffreVo = new OffreVo();
 
 
-  get lettreMotivation(): string {
-    return this._lettreMotivation;
+  get __lettreMotivation(): string {
+    return this.lettreMotivation;
   }
 
-  set lettreMotivation(value: string) {
-    this._lettreMotivation = value;
+  set __lettreMotivation(value: string) {
+    this.lettreMotivation = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 
-  get candidatVo(): EtudiantInfoVo {
-    if (this._candidatVo == null) { return new EtudiantInfoVo(); }
-    return this._candidatVo;
+  get __candidatVo(): EtudiantInfoVo {
+    if (this.candidatVo == null) { return new EtudiantInfoVo(); }
+    return this.candidatVo;
   }
 
-  set candidatVo(value: EtudiantInfoVo) {
-    this._candidatVo = value;
+  set __candidatVo(value: EtudiantInfoVo) {
+    this.candidatVo = value;
   }
 
-  get statusVo(): StatusVo {
-    if (this._statusVo == null) { return new StatusVo(); }
-    return this._statusVo;
+  get __statusVo(): StatusVo {
+    if (this.statusVo == null) { return new StatusVo(); }
+    return this.statusVo;
   }
 
-  set statusVo(value: StatusVo) {
-    this._statusVo = value;
+  set __statusVo(value: StatusVo) {
+    this.statusVo = value;
   }
 
-  get offreConcerneVo(): OffreVo {
-    if (this._offreConcerneVo == null) { return new OffreVo(); }
-    return this._offreConcerneVo;
+  get __offreConcerneVo(): OffreVo {
+    if (this.offreConcerneVo == null) { return new OffreVo(); }
+    return this.offreConcerneVo;
   }
 
-  set offreConcerneVo(value: OffreVo) {
-    this._offreConcerneVo = value;
+  set __offreConcerneVo(value: OffreVo) {
+    this.offreConcerneVo = value;
   }
 }

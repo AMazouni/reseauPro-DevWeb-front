@@ -2,61 +2,61 @@ import {CommentaireVo} from './Commentaire.model';
 import {UtilisateurVo} from './Utilisateur.model';
 
 export class PublicationVo {
-  public _contenu: string;
-  public _verified: string;
-  public _ref: string;
-  public _id: string;
-  public _posteParVo: UtilisateurVo = new UtilisateurVo();
-  public _commentaireVo: Array<CommentaireVo> = new Array<CommentaireVo>();
+  public contenu: string;
+  public verified: string;
+  public ref: string;
+  public id: string;
+  public posteParVo: UtilisateurVo = new UtilisateurVo();
+  public commentaireVo: Array<CommentaireVo> = new Array<CommentaireVo>();
 
 
-  get contenu(): string {
-    return this._contenu;
+  get __contenu(): string {
+    return this.contenu;
   }
 
-  set contenu(value: string) {
-    this._contenu = value;
+  set __contenu(value: string) {
+    this.contenu = value;
   }
 
-  get verified(): string {
-    return this._verified;
+  get __verified(): string {
+    return this.verified;
   }
 
-  set verified(value: string) {
-    this._verified = value;
+  set __verified(value: string) {
+    this.verified = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 
-  get posteParVo(): UtilisateurVo {
-    if (this._posteParVo == null) { return new UtilisateurVo(); }
-    return this._posteParVo;
+  get __posteParVo(): UtilisateurVo {
+    if (this.posteParVo == null) { return new UtilisateurVo(); }
+    return this.posteParVo;
   }
 
-  set posteParVo(value: UtilisateurVo) {
-    this._posteParVo = value;
+  set __posteParVo(value: UtilisateurVo) {
+    this.posteParVo = value;
   }
 
-  get commentaireVo(): Array<CommentaireVo> {
-    if (this._commentaireVo == null) { return new Array<CommentaireVo>(); }
-    return this._commentaireVo;
+  get __commentaireVo(): Array<CommentaireVo> {
+    if (this.commentaireVo == null) { return new Array<CommentaireVo>(); }
+    return this.commentaireVo;
   }
 
-  set commentaireVo(value: Array<CommentaireVo>) {
-    this._commentaireVo = value;
+  set __commentaireVo(value: Array<CommentaireVo>) {
+    this.commentaireVo = value;
   }
 }

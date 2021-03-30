@@ -10,7 +10,6 @@ export class AdminInfoService {
   constructor(private http: HttpClient) { }
   private _adminInfoDetail : AdminInfoVo =  new AdminInfoVo() ;
   private _adminInfoListe  : Array<AdminInfoVo> = new Array<AdminInfoVo>();
-  
   private _adminInfoSearch : AdminInfoVo = new AdminInfoVo();
   private _adminInfo: AdminInfoVo =  new AdminInfoVo();
   private _searchedAdminInfos: Array<AdminInfoVo> = new Array<AdminInfoVo>();
@@ -73,7 +72,6 @@ set adminInfoShowDetail (value: boolean ) {
       if (value != null) {
            this.adminInfoListe = value;
            this.editableAdminInfos = value;
-                                                 
       }
     }
   );

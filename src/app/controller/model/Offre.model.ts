@@ -3,134 +3,134 @@ import {CandidatureVo} from './Candidature.model';
 import {OffreTagsVo} from './OffreTags.model';
 
 export class OffreVo {
-  public _dateOffre: string;
-  public _titre: string;
-  public _infoSup: string;
-  public _type: string;
-  public _dernierDelai: string;
-  public _ref: string;
-  public _id: string;
-     public _dateOffreMax: string ;
-     public _dateOffreMin: string ;
-     public _dernierDelaiMax: string ;
-     public _dernierDelaiMin: string ;
-      public _tagsVo: OffreTagsVo = new OffreTagsVo();
-      public _fonctionVo: FonctionVo = new FonctionVo();
-  public _candidaturesVo: Array<CandidatureVo> = new Array<CandidatureVo>();
+  public dateOffre: string;
+  public titre: string;
+  public infoSup: string;
+  public type: string;
+  public dernierDelai: string;
+  public ref: string;
+  public id: string;
+     public dateOffreMax: string ;
+     public dateOffreMin: string ;
+     public dernierDelaiMax: string ;
+     public dernierDelaiMin: string ;
+      public tagsVo: OffreTagsVo = new OffreTagsVo();
+      public fonctionVo: FonctionVo = new FonctionVo();
+  public candidaturesVo: Array<CandidatureVo> = new Array<CandidatureVo>();
 
 
-    get dateOffre(): string {
-        return this._dateOffre;
+    get __dateOffre(): string {
+        return this.dateOffre;
     }
 
-    set dateOffre(value: string) {
-        this._dateOffre = value;
+    set __dateOffre(value: string) {
+        this.dateOffre = value;
     }
 
-    get titre(): string {
-        return this._titre;
+    get __titre(): string {
+        return this.titre;
     }
 
-    set titre(value: string) {
-        this._titre = value;
+    set __titre(value: string) {
+        this.titre = value;
     }
 
-    get infoSup(): string {
-        return this._infoSup;
+    get __infoSup(): string {
+        return this.infoSup;
     }
 
-    set infoSup(value: string) {
-        this._infoSup = value;
+    set __infoSup(value: string) {
+        this.infoSup = value;
     }
 
-    get type(): string {
-        return this._type;
+    get __type(): string {
+        return this.type;
     }
 
-    set type(value: string) {
-        this._type = value;
+    set __type(value: string) {
+        this.type = value;
     }
 
-    get dernierDelai(): string {
-        return this._dernierDelai;
+    get __dernierDelai(): string {
+        return this.dernierDelai;
     }
 
-    set dernierDelai(value: string) {
-        this._dernierDelai = value;
+    set __dernierDelai(value: string) {
+        this.dernierDelai = value;
     }
 
-    get ref(): string {
-        return this._ref;
+    get __ref(): string {
+        return this.ref;
     }
 
-    set ref(value: string) {
-        this._ref = value;
+    set __ref(value: string) {
+        this.ref = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get dateOffreMax(): string {
-        return this._dateOffreMax;
+    get __dateOffreMax(): string {
+        return this.dateOffreMax;
     }
 
-    set dateOffreMax(value: string) {
-        this._dateOffreMax = value;
+    set __dateOffreMax(value: string) {
+        this.dateOffreMax = value;
     }
 
-    get dateOffreMin(): string {
-        return this._dateOffreMin;
+    get __dateOffreMin(): string {
+        return this.dateOffreMin;
     }
 
-    set dateOffreMin(value: string) {
-        this._dateOffreMin = value;
+    set __dateOffreMin(value: string) {
+        this.dateOffreMin = value;
     }
 
-    get dernierDelaiMax(): string {
-        return this._dernierDelaiMax;
+    get __dernierDelaiMax(): string {
+        return this.dernierDelaiMax;
     }
 
-    set dernierDelaiMax(value: string) {
-        this._dernierDelaiMax = value;
+    set __dernierDelaiMax(value: string) {
+        this.dernierDelaiMax = value;
     }
 
-    get dernierDelaiMin(): string {
-        return this._dernierDelaiMin;
+    get __dernierDelaiMin(): string {
+        return this.dernierDelaiMin;
     }
 
-    set dernierDelaiMin(value: string) {
-        this._dernierDelaiMin = value;
+    set __dernierDelaiMin(value: string) {
+        this.dernierDelaiMin = value;
     }
 
-    get tagsVo(): OffreTagsVo {
-        if (this._tagsVo == null) { return new OffreTagsVo(); }
-        return this._tagsVo;
+    get __tagsVo(): OffreTagsVo {
+        if (this.tagsVo == null) { return new OffreTagsVo(); }
+        return this.tagsVo;
     }
 
-    set tagsVo(value: OffreTagsVo) {
-        this._tagsVo = value;
+    set __tagsVo(value: OffreTagsVo) {
+        this.tagsVo = value;
     }
 
-    get fonctionVo(): FonctionVo {
-        if (this._fonctionVo == null) { return new FonctionVo(); }
-        return this._fonctionVo;
+    get __fonctionVo(): FonctionVo {
+        if (this.fonctionVo == null) { return new FonctionVo(); }
+        return this.fonctionVo;
     }
 
-    set fonctionVo(value: FonctionVo) {
-        this._fonctionVo = value;
+    set __fonctionVo(value: FonctionVo) {
+        this.fonctionVo = value;
     }
 
-    get candidaturesVo(): Array<CandidatureVo> {
-        if (this._candidaturesVo == null) { return new Array<CandidatureVo>(); }
-        return this._candidaturesVo;
+    get __candidaturesVo(): Array<CandidatureVo> {
+        if (this.candidaturesVo == null) { return new Array<CandidatureVo>(); }
+        return this.candidaturesVo;
     }
 
-    set candidaturesVo(value: Array<CandidatureVo>) {
-        this._candidaturesVo = value;
+    set __candidaturesVo(value: Array<CandidatureVo>) {
+        this.candidaturesVo = value;
     }
 }

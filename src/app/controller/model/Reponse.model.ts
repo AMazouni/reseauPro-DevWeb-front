@@ -1,42 +1,42 @@
 import {QuestionVo} from './Question.model';
 
 export class ReponseVo {
-  public _reponse: string;
-  public _ref: string;
-  public _id: string;
-      public _questionVo: QuestionVo = new QuestionVo();
+  public reponse: string;
+  public ref: string;
+  public id: string;
+      public questionVo: QuestionVo = new QuestionVo();
 
 
-    get reponse(): string {
-        return this._reponse;
+    get __reponse(): string {
+        return this.reponse;
     }
 
-    set reponse(value: string) {
-        this._reponse = value;
+    set __reponse(value: string) {
+        this.reponse = value;
     }
 
-    get ref(): string {
-        return this._ref;
+    get __ref(): string {
+        return this.ref;
     }
 
-    set ref(value: string) {
-        this._ref = value;
+    set __ref(value: string) {
+        this.ref = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get questionVo(): QuestionVo {
-        if (this._questionVo == null) { return new QuestionVo(); }
-        return this._questionVo;
+    get __questionVo(): QuestionVo {
+        if (this.questionVo == null) { return new QuestionVo(); }
+        return this.questionVo;
     }
 
-    set questionVo(value: QuestionVo) {
-        this._questionVo = value;
+    set __questionVo(value: QuestionVo) {
+        this.questionVo = value;
     }
 }

@@ -1,40 +1,40 @@
 
 export class SexeVo {
-  public _libelle: string;
-  public _icon: string;
-  public _ref: string;
-  public _id: string;
+  public libelle: string;
+  public icon: string;
+  public ref: string;
+  public id: string;
 
 
-  get libelle(): string {
-    return this._libelle;
+  get __libelle(): string {
+    return this.libelle;
   }
 
-  set libelle(value: string) {
-    this._libelle = value;
+  set __libelle(value: string) {
+    this.libelle = value;
   }
 
-  get icon(): string {
-    return this._icon;
+  get __icon(): string {
+    return this.icon;
   }
 
-  set icon(value: string) {
-    this._icon = value;
+  set __icon(value: string) {
+    this.icon = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 }

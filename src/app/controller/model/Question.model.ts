@@ -1,40 +1,40 @@
 
 export class QuestionVo {
-  public _formule: string;
-  public _reponseCorrecte: string;
-  public _ref: string;
-  public _id: string;
+  public formule: string;
+  public reponseCorrecte: string;
+  public ref: string;
+  public id: string;
 
 
-  get formule(): string {
-    return this._formule;
+  get __formule(): string {
+    return this.formule;
   }
 
-  set formule(value: string) {
-    this._formule = value;
+  set __formule(value: string) {
+    this.formule = value;
   }
 
-  get reponseCorrecte(): string {
-    return this._reponseCorrecte;
+  get __reponseCorrecte(): string {
+    return this.reponseCorrecte;
   }
 
-  set reponseCorrecte(value: string) {
-    this._reponseCorrecte = value;
+  set __reponseCorrecte(value: string) {
+    this.reponseCorrecte = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 }

@@ -2,94 +2,93 @@ import {StatusVo} from './Status.model';
 import {MessageVo} from './Message.model';
 import {EtudiantInfoVo} from './EtudiantInfo.model';
 import {CatDemandeVo} from './CatDemande.model';
-import {UtilisateurVo} from "./Utilisateur.model";
 
 export class DemandeVo {
-  public _objetDemande: string;
-  public _infoSupp: string;
-  public _ref: string;
-  public _id: string;
-  public _categorieDemandeVo: CatDemandeVo = new CatDemandeVo();
-  public _demandeParVo: EtudiantInfoVo = new EtudiantInfoVo();
-  public _statusVo: StatusVo = new StatusVo();
-  public _demandeAVo: EtudiantInfoVo = new EtudiantInfoVo();
-  public _messagesVo: Array<MessageVo> = new Array<MessageVo>();
+  public objetDemande: string;
+  public infoSupp: string;
+  public ref: string;
+  public id: string;
+  public categorieDemandeVo: CatDemandeVo = new CatDemandeVo();
+  public demandeParVo: EtudiantInfoVo = new EtudiantInfoVo();
+  public statusVo: StatusVo = new StatusVo();
+  public demandeAVo: EtudiantInfoVo = new EtudiantInfoVo();
+  public messagesVo: Array<MessageVo> = new Array<MessageVo>();
 
 
-    get objetDemande(): string {
-        return this._objetDemande;
+    get __objetDemande(): string {
+        return this.objetDemande;
     }
 
-    set objetDemande(value: string) {
-        this._objetDemande = value;
+    set __objetDemande(value: string) {
+        this.objetDemande = value;
     }
 
-    get infoSupp(): string {
-        return this._infoSupp;
+    get __infoSupp(): string {
+        return this.infoSupp;
     }
 
-    set infoSupp(value: string) {
-        this._infoSupp = value;
+    set __infoSupp(value: string) {
+        this.infoSupp = value;
     }
 
-    get ref(): string {
-        return this._ref;
+    get __ref(): string {
+        return this.ref;
     }
 
-    set ref(value: string) {
-        this._ref = value;
+    set __ref(value: string) {
+        this.ref = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get categorieDemandeVo(): CatDemandeVo {
-        if (this._categorieDemandeVo == null) {return new CatDemandeVo(); }
-        return this._categorieDemandeVo;
+    get __categorieDemandeVo(): CatDemandeVo {
+        if (this.categorieDemandeVo == null) {return new CatDemandeVo(); }
+        return this.categorieDemandeVo;
     }
 
-    set categorieDemandeVo(value: CatDemandeVo) {
-        this._categorieDemandeVo = value;
+    set __categorieDemandeVo(value: CatDemandeVo) {
+        this.categorieDemandeVo = value;
     }
 
-    get demandeParVo(): EtudiantInfoVo {
-        if (this._demandeParVo == null) {return new EtudiantInfoVo(); }
-        return this._demandeParVo;
+    get __demandeParVo(): EtudiantInfoVo {
+        if (this.demandeParVo == null) {return new EtudiantInfoVo(); }
+        return this.demandeParVo;
     }
 
-    set demandeParVo(value: EtudiantInfoVo) {
-        this._demandeParVo = value;
+    set __demandeParVo(value: EtudiantInfoVo) {
+        this.demandeParVo = value;
     }
 
-    get statusVo(): StatusVo {
-        if (this._statusVo == null) {return new StatusVo(); }
-        return this._statusVo;
+    get __statusVo(): StatusVo {
+        if (this.statusVo == null) {return new StatusVo(); }
+        return this.statusVo;
     }
 
-    set statusVo(value: StatusVo) {
-        this._statusVo = value;
+    set __statusVo(value: StatusVo) {
+        this.statusVo = value;
     }
 
-    get demandeAVo(): EtudiantInfoVo {
-        if (this._demandeAVo == null) {return new EtudiantInfoVo(); }
-        return this._demandeAVo;
+    get __demandeAVo(): EtudiantInfoVo {
+        if (this.demandeAVo == null) {return new EtudiantInfoVo(); }
+        return this.demandeAVo;
     }
 
-    set demandeAVo(value: EtudiantInfoVo) {
-        this._demandeAVo = value;
+    set __demandeAVo(value: EtudiantInfoVo) {
+        this.demandeAVo = value;
     }
 
-    get messagesVo(): Array<MessageVo> {
-        if (this._messagesVo == null) {return new Array<MessageVo>(); }
-        return this._messagesVo;
+    get __messagesVo(): Array<MessageVo> {
+        if (this.messagesVo == null) {return new Array<MessageVo>(); }
+        return this.messagesVo;
     }
 
-    set messagesVo(value: Array<MessageVo>) {
-        this._messagesVo = value;
+    set __messagesVo(value: Array<MessageVo>) {
+        this.messagesVo = value;
     }
 }

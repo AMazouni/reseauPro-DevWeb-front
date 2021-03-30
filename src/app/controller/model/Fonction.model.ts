@@ -2,115 +2,115 @@ import {EntrepriseVo} from './Entreprise.model';
 import {EtudiantInfoVo} from './EtudiantInfo.model';
 
 export class FonctionVo {
-  public _deteFin: string;
-  public _titre: string;
-  public _dateDebut: string;
-  public _description: string;
-  public _ref: string;
-  public _id: string;
-     public _deteFinMax: string ;
-     public _deteFinMin: string ;
-     public _dateDebutMax: string ;
-     public _dateDebutMin: string ;
-      public _entrepriseVo: EntrepriseVo = new EntrepriseVo();
-      public _occupeParVo: EtudiantInfoVo = new EtudiantInfoVo();
+  public deteFin: string;
+  public titre: string;
+  public dateDebut: string;
+  public description: string;
+  public ref: string;
+  public id: string;
+     public deteFinMax: string ;
+     public deteFinMin: string ;
+     public dateDebutMax: string ;
+     public dateDebutMin: string ;
+      public entrepriseVo: EntrepriseVo = new EntrepriseVo();
+      public occupeParVo: EtudiantInfoVo = new EtudiantInfoVo();
 
 
-    get deteFin(): string {
-        return this._deteFin;
+    get __deteFin(): string {
+        return this.deteFin;
     }
 
-    set deteFin(value: string) {
-        this._deteFin = value;
+    set __deteFin(value: string) {
+        this.deteFin = value;
     }
 
-    get titre(): string {
-        return this._titre;
+    get __titre(): string {
+        return this.titre;
     }
 
-    set titre(value: string) {
-        this._titre = value;
+    set __titre(value: string) {
+        this.titre = value;
     }
 
-    get dateDebut(): string {
-        return this._dateDebut;
+    get __dateDebut(): string {
+        return this.dateDebut;
     }
 
-    set dateDebut(value: string) {
-        this._dateDebut = value;
+    set __dateDebut(value: string) {
+        this.dateDebut = value;
     }
 
-    get description(): string {
-        return this._description;
+    get __description(): string {
+        return this.description;
     }
 
-    set description(value: string) {
-        this._description = value;
+    set __description(value: string) {
+        this.description = value;
     }
 
-    get ref(): string {
-        return this._ref;
+    get __ref(): string {
+        return this.ref;
     }
 
-    set ref(value: string) {
-        this._ref = value;
+    set __ref(value: string) {
+        this.ref = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get deteFinMax(): string {
-        return this._deteFinMax;
+    get __deteFinMax(): string {
+        return this.deteFinMax;
     }
 
-    set deteFinMax(value: string) {
-        this._deteFinMax = value;
+    set __deteFinMax(value: string) {
+        this.deteFinMax = value;
     }
 
-    get deteFinMin(): string {
-        return this._deteFinMin;
+    get __deteFinMin(): string {
+        return this.deteFinMin;
     }
 
-    set deteFinMin(value: string) {
-        this._deteFinMin = value;
+    set __deteFinMin(value: string) {
+        this.deteFinMin = value;
     }
 
-    get dateDebutMax(): string {
-        return this._dateDebutMax;
+    get __dateDebutMax(): string {
+        return this.dateDebutMax;
     }
 
-    set dateDebutMax(value: string) {
-        this._dateDebutMax = value;
+    set __dateDebutMax(value: string) {
+        this.dateDebutMax = value;
     }
 
-    get dateDebutMin(): string {
-        return this._dateDebutMin;
+    get __dateDebutMin(): string {
+        return this.dateDebutMin;
     }
 
-    set dateDebutMin(value: string) {
-        this._dateDebutMin = value;
+    set __dateDebutMin(value: string) {
+        this.dateDebutMin = value;
     }
 
-    get entrepriseVo(): EntrepriseVo {
-        if (this._entrepriseVo == null) { return new EntrepriseVo(); }
-        return this._entrepriseVo;
+    get __entrepriseVo(): EntrepriseVo {
+        if (this.entrepriseVo == null) { return new EntrepriseVo(); }
+        return this.entrepriseVo;
     }
 
-    set entrepriseVo(value: EntrepriseVo) {
-        this._entrepriseVo = value;
+    set __entrepriseVo(value: EntrepriseVo) {
+        this.entrepriseVo = value;
     }
 
-    get occupeParVo(): EtudiantInfoVo {
-        if (this._occupeParVo == null) { return new EtudiantInfoVo(); }
-        return this._occupeParVo;
+    get __occupeParVo(): EtudiantInfoVo {
+        if (this.occupeParVo == null) { return new EtudiantInfoVo(); }
+        return this.occupeParVo;
     }
 
-    set occupeParVo(value: EtudiantInfoVo) {
-        this._occupeParVo = value;
+    set __occupeParVo(value: EtudiantInfoVo) {
+        this.occupeParVo = value;
     }
 }

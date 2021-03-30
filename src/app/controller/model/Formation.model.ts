@@ -3,81 +3,81 @@ import {EtudiantInfoVo} from './EtudiantInfo.model';
 import {EtablissementVo} from './Etablissement.model';
 
 export class FormationVo {
-    public _intitule: string;
-    public _ref: string;
-    public _id: string;
-    public _description: string;
-    public _etablissementVo: EtablissementVo ;
-    public _responsableVo: ProfesseurInfoVo ;
-    public _laureatsVo: Array<EtudiantInfoVo> ;
-    public _etudiantsActVo: Array<EtudiantInfoVo>;
+    public intitule: string;
+    public ref: string;
+    public id: string;
+    public description: string;
+    public etablissementVo: EtablissementVo ;
+    public responsableVo: ProfesseurInfoVo ;
+    public laureatsVo: Array<EtudiantInfoVo> ;
+    public etudiantsActVo: Array<EtudiantInfoVo>;
 
-    get intitule(): string {
-        return this._intitule;
+    get __intitule(): string {
+        return this.intitule;
     }
 
-    set intitule(value: string) {
-        this._intitule = value;
+    set __intitule(value: string) {
+        this.intitule = value;
     }
 
-    get ref(): string {
-        return this._ref;
+    get __ref(): string {
+        return this.ref;
     }
 
-    set ref(value: string) {
-        this._ref = value;
+    set __ref(value: string) {
+        this.ref = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get description(): string {
-        return this._description;
+    get __description(): string {
+        return this.description;
     }
 
-    set description(value: string) {
-        this._description = value;
+    set __description(value: string) {
+        this.description = value;
     }
 
-    get etablissementVo(): EtablissementVo {
-        if (this._etablissementVo == null) { return new EtablissementVo(); }
-        return this._etablissementVo;
+    get __etablissementVo(): EtablissementVo {
+        if (this.etablissementVo == null) { return new EtablissementVo(); }
+        return this.etablissementVo;
     }
 
-    set etablissementVo(value: EtablissementVo) {
-        this._etablissementVo = value;
+    set __etablissementVo(value: EtablissementVo) {
+        this.etablissementVo = value;
     }
 
-    get responsableVo(): ProfesseurInfoVo {
-        if (this._responsableVo == null) { return new ProfesseurInfoVo(); }
-        return this._responsableVo;
+    get __responsableVo(): ProfesseurInfoVo {
+        if (this.responsableVo == null) { return new ProfesseurInfoVo(); }
+        return this.responsableVo;
     }
 
-    set responsableVo(value: ProfesseurInfoVo) {
-        this._responsableVo = value;
+    set __responsableVo(value: ProfesseurInfoVo) {
+        this.responsableVo = value;
     }
 
-    get laureatsVo(): Array<EtudiantInfoVo> {
-        if (this._laureatsVo == null) { return new Array<EtudiantInfoVo>(); }
-        return this._laureatsVo;
+    get __laureatsVo(): Array<EtudiantInfoVo> {
+        if (this.laureatsVo == null) { return new Array<EtudiantInfoVo>(); }
+        return this.laureatsVo;
     }
 
-    set laureatsVo(value: Array<EtudiantInfoVo>) {
-        this._laureatsVo = value;
+    set __laureatsVo(value: Array<EtudiantInfoVo>) {
+        this.laureatsVo = value;
     }
 
-    get etudiantsActVo(): Array<EtudiantInfoVo> {
-        if (this._etudiantsActVo == null) { return new Array<EtudiantInfoVo>(); }
-        return this._etudiantsActVo;
+    get __etudiantsActVo(): Array<EtudiantInfoVo> {
+        if (this.etudiantsActVo == null) { return new Array<EtudiantInfoVo>(); }
+        return this.etudiantsActVo;
     }
 
-    set etudiantsActVo(value: Array<EtudiantInfoVo>) {
-        this._etudiantsActVo = value;
+    set __etudiantsActVo(value: Array<EtudiantInfoVo>) {
+        this.etudiantsActVo = value;
     }
 
 }

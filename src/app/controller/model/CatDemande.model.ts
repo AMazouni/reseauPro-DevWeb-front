@@ -1,31 +1,31 @@
 
 export class CatDemandeVo {
-  public _id: string;
-  public _ref: string;
-  public _libellee: string;
+  public id: string;
+  public ref: string;
+  public libellee: string;
 
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get libellee(): string {
-    return this._libellee;
+  get __libellee(): string {
+    return this.libellee;
   }
 
-  set libellee(value: string) {
-    this._libellee = value;
+  set __libellee(value: string) {
+    this.libellee = value;
   }
 }

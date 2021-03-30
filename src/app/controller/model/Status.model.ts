@@ -1,40 +1,40 @@
 
 export class StatusVo {
-  public _code: string;
-  public _libelle: string;
-  public _ref: string;
-  public _id: string;
+  public code: string;
+  public libelle: string;
+  public ref: string;
+  public id: string;
 
 
-  get code(): string {
-    return this._code;
+  get __code(): string {
+    return this.code;
   }
 
-  set code(value: string) {
-    this._code = value;
+  set __code(value: string) {
+    this.code = value;
   }
 
-  get libelle(): string {
-    return this._libelle;
+  get __libelle(): string {
+    return this.libelle;
   }
 
-  set libelle(value: string) {
-    this._libelle = value;
+  set __libelle(value: string) {
+    this.libelle = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 }

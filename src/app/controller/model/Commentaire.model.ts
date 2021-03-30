@@ -2,53 +2,53 @@ import {UtilisateurVo} from './Utilisateur.model';
 import {PublicationVo} from './Publication.model';
 
 export class CommentaireVo {
-  public _comref: string;
-  public _contenu: string;
-  public _id: string;
-  public _publicationVo: PublicationVo ;
-  public _posteParVo: UtilisateurVo;
+  public comref: string;
+  public contenu: string;
+  public id: string;
+  public publicationVo: PublicationVo ;
+  public posteParVo: UtilisateurVo;
 
 
-    get comref(): string {
-        return this._comref;
+    get __comref(): string {
+        return this.comref;
     }
 
-    get contenu(): string {
-        return this._contenu;
+    get __contenu(): string {
+        return this.contenu;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    get publicationVo(): PublicationVo {
-        if (this._publicationVo == null) { return new PublicationVo(); }
-        return this._publicationVo;
+    get __publicationVo(): PublicationVo {
+        if (this.publicationVo == null) { return new PublicationVo(); }
+        return this.publicationVo;
     }
 
-    get posteParVo(): UtilisateurVo {
-        if (this._posteParVo == null) { return new UtilisateurVo(); }
-        return this._posteParVo;
+    get __posteParVo(): UtilisateurVo {
+        if (this.posteParVo == null) { return new UtilisateurVo(); }
+        return this.posteParVo;
     }
 
 
-    set comref(value: string) {
-        this._comref = value;
+    set __comref(value: string) {
+        this.comref = value;
     }
 
-    set contenu(value: string) {
-        this._contenu = value;
+    set __contenu(value: string) {
+        this.contenu = value;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    set publicationVo(value: PublicationVo) {
-        this._publicationVo = value;
+    set __publicationVo(value: PublicationVo) {
+        this.publicationVo = value;
     }
 
-    set posteParVo(value: UtilisateurVo) {
-        this._posteParVo = value;
+    set __posteParVo(value: UtilisateurVo) {
+        this.posteParVo = value;
     }
 }

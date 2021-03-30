@@ -1,51 +1,51 @@
 import {FormationVo} from './Formation.model';
 
 export class EtablissementVo {
-  public _nom: string;
-  public _description: string;
-  public _id: string;
-  public _ref: string;
-  public _formationsVo: Array<FormationVo>;
+  public nom: string;
+  public description: string;
+  public id: string;
+  public ref: string;
+  public formationsVo: Array<FormationVo>;
 
 
-  get nom(): string {
-    return this._nom;
+  get __nom(): string {
+    return this.nom;
   }
 
-  set nom(value: string) {
-    this._nom = value;
+  set __nom(value: string) {
+    this.nom = value;
   }
 
-  get description(): string {
-    return this._description;
+  get __description(): string {
+    return this.description;
   }
 
-  set description(value: string) {
-    this._description = value;
+  set __description(value: string) {
+    this.description = value;
   }
 
-  get id(): string {
-    return this._id;
+  get __id(): string {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set __id(value: string) {
+    this.id = value;
   }
 
-  get ref(): string {
-    return this._ref;
+  get __ref(): string {
+    return this.ref;
   }
 
-  set ref(value: string) {
-    this._ref = value;
+  set __ref(value: string) {
+    this.ref = value;
   }
 
-  get formationsVo(): Array<FormationVo> {
-    if (this._formationsVo == null) { return new Array<FormationVo>(); }
-    return this._formationsVo;
+  get __formationsVo(): Array<FormationVo> {
+    if (this.formationsVo == null) { return new Array<FormationVo>(); }
+    return this.formationsVo;
   }
 
-  set formationsVo(value: Array<FormationVo>) {
-    this._formationsVo = value;
+  set __formationsVo(value: Array<FormationVo>) {
+    this.formationsVo = value;
   }
 }

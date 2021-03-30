@@ -1,52 +1,52 @@
 import {UtilisateurVo} from './Utilisateur.model';
 
 export class AdminInfoVo {
-  public _nom: string;
-  public _prenom: string;
-  public _code: string;
-  public _id: string;
-      public _compteVo: UtilisateurVo ;
+  public nom: string;
+  public prenom: string;
+  public code: string;
+  public id: string;
+  public compteVo: UtilisateurVo ;
 
 
-    get nom(): string {
-        return this._nom;
+    get __nom(): string {
+        return this.nom;
     }
 
-    set nom(value: string) {
-        this._nom = value;
+    set __nom(value: string) {
+        this.nom = value;
     }
 
-    get prenom(): string {
-        return this._prenom;
+    get __prenom(): string {
+        return this.prenom;
     }
 
-    set prenom(value: string) {
-        this._prenom = value;
+    set __prenom(value: string) {
+        this.prenom = value;
     }
 
-    get code(): string {
-        return this._code;
+    get __code(): string {
+        return this.code;
     }
 
-    set code(value: string) {
-        this._code = value;
+    set __code(value: string) {
+        this.code = value;
     }
 
-    get id(): string {
-        return this._id;
+    get __id(): string {
+        return this.id;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set __id(value: string) {
+        this.id = value;
     }
 
-    get compteVo(): UtilisateurVo {
-        if (this._compteVo == null) return new UtilisateurVo()
-        return this._compteVo;
+    get __compteVo(): UtilisateurVo {
+        if (this.compteVo == null) return new UtilisateurVo()
+        return this.compteVo;
     }
 
-    set compteVo(value: UtilisateurVo) {
+    set __compteVo(value: UtilisateurVo) {
 
-        this._compteVo = value;
+        this.compteVo = value;
     }
 }
