@@ -1,6 +1,5 @@
 import {CommentaireVo} from './Commentaire.model';
 import {UtilisateurVo} from './Utilisateur.model';
-import {EtablissementVo} from "./Etablissement.model";
 
 export class PublicationVo {
   public _contenu: string;

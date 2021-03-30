@@ -1,7 +1,6 @@
 import {FonctionVo} from './Fonction.model';
 import {CandidatureVo} from './Candidature.model';
 import {OffreTagsVo} from './OffreTags.model';
-import {DemandeVo} from "./Demande.model";
 
 export class OffreVo {
   public _dateOffre: string;

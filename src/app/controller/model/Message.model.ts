@@ -1,6 +1,5 @@
 import {DemandeVo} from './Demande.model';
 import {UtilisateurVo} from './Utilisateur.model';
-import {EtudiantInfoVo} from "./EtudiantInfo.model";
 
 export class MessageVo {
   public _contenu: string;

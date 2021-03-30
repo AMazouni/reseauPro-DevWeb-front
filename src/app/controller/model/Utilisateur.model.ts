@@ -5,8 +5,7 @@ import {EtudiantInfoVo} from './EtudiantInfo.model';
 import {CommentaireVo} from './Commentaire.model';
 import {ReponseVo} from './Reponse.model';
 import {PublicationVo} from './Publication.model';
-import {AdminInfoVo} from "./AdminInfo.model";
-import {QuestionVo} from "./Question.model";
+import {AdminInfoVo} from './AdminInfo.model';
 
 export class UtilisateurVo {
   public _verified: string;
@@ -20,15 +19,15 @@ export class UtilisateurVo {
   public _id: string;
      public _dateNaissanceMax: string ;
      public _dateNaissanceMin: string ;
-      public _adminInfoVo: AdminInfoVo = new AdminInfoVo();
-      public _laureatInfoVo: EtudiantInfoVo = new EtudiantInfoVo();
-      public _etudiantInfoVo: EtudiantInfoVo = new EtudiantInfoVo();
-      public _professeurInfoVo: ProfesseurInfoVo = new ProfesseurInfoVo();
-      public _reponsesVo: ReponseVo = new ReponseVo();
-  public _messagesRecusVo: Array<MessageVo> = new Array<MessageVo>();
-  public _messagesEnvoyeVo: Array<MessageVo> = new Array<MessageVo>();
-  public _comRedigesVo: Array<CommentaireVo> = new Array<CommentaireVo>();
-  public _publicationsRedigesVo: Array<PublicationVo> = new Array<PublicationVo>();
+      public _adminInfoVo: AdminInfoVo;
+      public _laureatInfoVo: EtudiantInfoVo;
+      public _etudiantInfoVo: EtudiantInfoVo;
+      public _professeurInfoVo: ProfesseurInfoVo;
+      public _reponsesVo: ReponseVo;
+  public _messagesRecusVo: Array<MessageVo>;
+  public _messagesEnvoyeVo: Array<MessageVo>;
+  public _comRedigesVo: Array<CommentaireVo>;
+  public _publicationsRedigesVo: Array<PublicationVo>;
 
 
     get verified(): string {

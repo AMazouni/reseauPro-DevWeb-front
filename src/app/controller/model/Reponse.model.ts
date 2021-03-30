@@ -1,5 +1,4 @@
 import {QuestionVo} from './Question.model';
-import {CommentaireVo} from "./Commentaire.model";
 
 export class ReponseVo {
   public _reponse: string;

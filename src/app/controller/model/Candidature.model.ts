@@ -1,7 +1,6 @@
 import {StatusVo} from './Status.model';
 import {EtudiantInfoVo} from './EtudiantInfo.model';
 import {OffreVo} from './Offre.model';
-import {PublicationVo} from "./Publication.model";
 
 export class CandidatureVo {
   public _lettreMotivation: string;

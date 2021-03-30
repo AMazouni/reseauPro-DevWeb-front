@@ -85,6 +85,7 @@ export class DemandeVo {
     }
 
     get messagesVo(): Array<MessageVo> {
+        if (this._messagesVo == null) {return new Array<MessageVo>(); }
         return this._messagesVo;
     }
 

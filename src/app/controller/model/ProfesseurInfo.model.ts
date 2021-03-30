@@ -1,7 +1,6 @@
 import {FormationVo} from './Formation.model';
 import {UtilisateurVo} from './Utilisateur.model';
 import {EtablissementVo} from './Etablissement.model';
-import {DemandeVo} from "./Demande.model";
 
 export class ProfesseurInfoVo {
   public _code: string;
