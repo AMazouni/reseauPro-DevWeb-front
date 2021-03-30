@@ -115,7 +115,7 @@ set demandeShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<DemandeVo>>('http://localhost:8080/generated/demande/').subscribe(
+  this.http.get<Array<DemandeVo>>('http://localhost:8080/uca/reseaupro/demande/').subscribe(
     value => {
       if (value != null) {
            this.demandeListe = value;
@@ -127,7 +127,7 @@ set demandeShowDetail (value: boolean ) {
 }
 
   public saveDemande() {
-  this.http.post<DemandeVo>('http://localhost:8080/generated/demande/', this.demande).subscribe(data=>{
+  this.http.post<DemandeVo>('http://localhost:8080/uca/reseaupro/demande/', this.demande).subscribe(data=>{
     this.createHide();
      this.demandeListe.push(data);
 
@@ -136,7 +136,7 @@ set demandeShowDetail (value: boolean ) {
   }
 
   public editDemande() {
-  this.http.put<DemandeVo>('http://localhost:8080/generated/demande/', this.demande).subscribe(data=>{
+  this.http.put<DemandeVo>('http://localhost:8080/uca/reseaupro/demande/', this.demande).subscribe(data=>{
     this.editHide();
   });
       this.demande.messagesVo.length = 0;
@@ -162,7 +162,7 @@ set demandeShowDetail (value: boolean ) {
     this.demande.messagesVo.splice(i, 1);
   }
    public findDemande ( pojo : DemandeVo ){
-  this.http.post<Array<DemandeVo>>('http://localhost:8080/generated/demande/search/', pojo).subscribe(
+  this.http.post<Array<DemandeVo>>('http://localhost:8080/uca/reseaupro/demande/search/', pojo).subscribe(
     value =>{
        this.demandeListe = value;  
     } );
@@ -177,7 +177,7 @@ public detailShow ( pojo : DemandeVo ){
 
 
 delete(pojo: DemandeVo) {
-   this.http.delete<DemandeVo>('http://localhost:8080/generated/demande/id/'+pojo.id).subscribe(
+   this.http.delete<DemandeVo>('http://localhost:8080/uca/reseaupro/demande/id/'+pojo.id).subscribe(
         value => {
         var index = this.demandeListe.indexOf(pojo);
 if (index > -1) {
@@ -191,7 +191,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<DemandeVo>('http://localhost:8080/generated/demande/ref/' + ref).subscribe(
+      this.http.get<DemandeVo>('http://localhost:8080/uca/reseaupro/demande/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.demande = value; }
         }
@@ -199,28 +199,28 @@ if (index > -1) {
         }
 
             public findAllcategorieDemandes() {
-             this.http.get<Array<CatDemandeVo>>('http://localhost:8080/generated/catDemande/').subscribe(
+             this.http.get<Array<CatDemandeVo>>('http://localhost:8080/uca/reseaupro/catDemande/').subscribe(
             value => {
             if (value != null) { this.categorieDemandes = value; }
             }
             );
             }
             public findAlldemandePars() {
-             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/generated/etudiantInfo/').subscribe(
+             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/uca/reseaupro/etudiantInfo/').subscribe(
             value => {
             if (value != null) { this.demandePars = value; }
             }
             );
             }
             public findAllstatuss() {
-             this.http.get<Array<StatusVo>>('http://localhost:8080/generated/status/').subscribe(
+             this.http.get<Array<StatusVo>>('http://localhost:8080/uca/reseaupro/status/').subscribe(
             value => {
             if (value != null) { this.statuss = value; }
             }
             );
             }
             public findAlldemandeAs() {
-             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/generated/etudiantInfo/').subscribe(
+             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/uca/reseaupro/etudiantInfo/').subscribe(
             value => {
             if (value != null) { this.demandeAs = value; }
             }

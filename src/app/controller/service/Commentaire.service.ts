@@ -85,7 +85,7 @@ set commentaireShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<CommentaireVo>>('http://localhost:8080/generated/commentaire/').subscribe(
+  this.http.get<Array<CommentaireVo>>('http://localhost:8080/uca/reseaupro/commentaire/').subscribe(
     value => {
       if (value != null) {
            this.commentaireListe = value;
@@ -97,7 +97,7 @@ set commentaireShowDetail (value: boolean ) {
 }
 
   public saveCommentaire() {
-  this.http.post<CommentaireVo>('http://localhost:8080/generated/commentaire/', this.commentaire).subscribe(data=>{
+  this.http.post<CommentaireVo>('http://localhost:8080/uca/reseaupro/commentaire/', this.commentaire).subscribe(data=>{
     this.createHide();
      this.commentaireListe.push(data);
 
@@ -105,14 +105,14 @@ set commentaireShowDetail (value: boolean ) {
   }
 
   public editCommentaire() {
-  this.http.put<CommentaireVo>('http://localhost:8080/generated/commentaire/', this.commentaire).subscribe(data=>{
+  this.http.put<CommentaireVo>('http://localhost:8080/uca/reseaupro/commentaire/', this.commentaire).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findCommentaire ( pojo : CommentaireVo ){
-  this.http.post<Array<CommentaireVo>>('http://localhost:8080/generated/commentaire/search/', pojo).subscribe(
+  this.http.post<Array<CommentaireVo>>('http://localhost:8080/uca/reseaupro/commentaire/search/', pojo).subscribe(
     value =>{
        this.commentaireListe = value;  
     } );
@@ -127,7 +127,7 @@ public detailShow ( pojo : CommentaireVo ){
 
 
 delete(pojo: CommentaireVo) {
-   this.http.delete<CommentaireVo>('http://localhost:8080/generated/commentaire/id/'+pojo.id).subscribe(
+   this.http.delete<CommentaireVo>('http://localhost:8080/uca/reseaupro/commentaire/id/'+pojo.id).subscribe(
         value => {
         var index = this.commentaireListe.indexOf(pojo);
 if (index > -1) {
@@ -141,7 +141,7 @@ if (index > -1) {
 
 
        public findBycomref(ref: string) {
-      this.http.get<CommentaireVo>('http://localhost:8080/generated/commentaire/comref/' + ref).subscribe(
+      this.http.get<CommentaireVo>('http://localhost:8080/uca/reseaupro/commentaire/comref/' + ref).subscribe(
         value => {
         if (value != null) { this.commentaire = value; }
         }
@@ -149,14 +149,14 @@ if (index > -1) {
         }
 
             public findAllpublications() {
-             this.http.get<Array<PublicationVo>>('http://localhost:8080/generated/publication/').subscribe(
+             this.http.get<Array<PublicationVo>>('http://localhost:8080/uca/reseaupro/publication/').subscribe(
             value => {
             if (value != null) { this.publications = value; }
             }
             );
             }
             public findAllpostePars() {
-             this.http.get<Array<UtilisateurVo>>('http://localhost:8080/generated/utilisateur/').subscribe(
+             this.http.get<Array<UtilisateurVo>>('http://localhost:8080/uca/reseaupro/utilisateur/').subscribe(
             value => {
             if (value != null) { this.postePars = value; }
             }

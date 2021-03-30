@@ -67,7 +67,7 @@ set questionShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<QuestionVo>>('http://localhost:8080/generated/question/').subscribe(
+  this.http.get<Array<QuestionVo>>('http://localhost:8080/uca/reseaupro/question/').subscribe(
     value => {
       if (value != null) {
            this.questionListe = value;
@@ -79,7 +79,7 @@ set questionShowDetail (value: boolean ) {
 }
 
   public saveQuestion() {
-  this.http.post<QuestionVo>('http://localhost:8080/generated/question/', this.question).subscribe(data=>{
+  this.http.post<QuestionVo>('http://localhost:8080/uca/reseaupro/question/', this.question).subscribe(data=>{
     this.createHide();
      this.questionListe.push(data);
 
@@ -87,14 +87,14 @@ set questionShowDetail (value: boolean ) {
   }
 
   public editQuestion() {
-  this.http.put<QuestionVo>('http://localhost:8080/generated/question/', this.question).subscribe(data=>{
+  this.http.put<QuestionVo>('http://localhost:8080/uca/reseaupro/question/', this.question).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findQuestion ( pojo : QuestionVo ){
-  this.http.post<Array<QuestionVo>>('http://localhost:8080/generated/question/search/', pojo).subscribe(
+  this.http.post<Array<QuestionVo>>('http://localhost:8080/uca/reseaupro/question/search/', pojo).subscribe(
     value =>{
        this.questionListe = value;  
     } );
@@ -109,7 +109,7 @@ public detailShow ( pojo : QuestionVo ){
 
 
 delete(pojo: QuestionVo) {
-   this.http.delete<QuestionVo>('http://localhost:8080/generated/question/id/'+pojo.id).subscribe(
+   this.http.delete<QuestionVo>('http://localhost:8080/uca/reseaupro/question/id/'+pojo.id).subscribe(
         value => {
         var index = this.questionListe.indexOf(pojo);
 if (index > -1) {
@@ -123,7 +123,7 @@ if (index > -1) {
 
 
        public findByformule(ref: string) {
-      this.http.get<QuestionVo>('http://localhost:8080/generated/question/formule/' + ref).subscribe(
+      this.http.get<QuestionVo>('http://localhost:8080/uca/reseaupro/question/formule/' + ref).subscribe(
         value => {
         if (value != null) { this.question = value; }
         }

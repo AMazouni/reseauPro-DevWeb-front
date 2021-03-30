@@ -67,7 +67,7 @@ set offreTagsShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<OffreTagsVo>>('http://localhost:8080/generated/offreTags/').subscribe(
+  this.http.get<Array<OffreTagsVo>>('http://localhost:8080/uca/reseaupro/offreTags/').subscribe(
     value => {
       if (value != null) {
            this.offreTagsListe = value;
@@ -79,7 +79,7 @@ set offreTagsShowDetail (value: boolean ) {
 }
 
   public saveOffreTags() {
-  this.http.post<OffreTagsVo>('http://localhost:8080/generated/offreTags/', this.offreTags).subscribe(data=>{
+  this.http.post<OffreTagsVo>('http://localhost:8080/uca/reseaupro/offreTags/', this.offreTags).subscribe(data=>{
     this.createHide();
      this.offreTagsListe.push(data);
 
@@ -87,14 +87,14 @@ set offreTagsShowDetail (value: boolean ) {
   }
 
   public editOffreTags() {
-  this.http.put<OffreTagsVo>('http://localhost:8080/generated/offreTags/', this.offreTags).subscribe(data=>{
+  this.http.put<OffreTagsVo>('http://localhost:8080/uca/reseaupro/offreTags/', this.offreTags).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findOffreTags ( pojo : OffreTagsVo ){
-  this.http.post<Array<OffreTagsVo>>('http://localhost:8080/generated/offreTags/search/', pojo).subscribe(
+  this.http.post<Array<OffreTagsVo>>('http://localhost:8080/uca/reseaupro/offreTags/search/', pojo).subscribe(
     value =>{
        this.offreTagsListe = value;  
     } );
@@ -109,7 +109,7 @@ public detailShow ( pojo : OffreTagsVo ){
 
 
 delete(pojo: OffreTagsVo) {
-   this.http.delete<OffreTagsVo>('http://localhost:8080/generated/offreTags/id/'+pojo.id).subscribe(
+   this.http.delete<OffreTagsVo>('http://localhost:8080/uca/reseaupro/offreTags/id/'+pojo.id).subscribe(
         value => {
         var index = this.offreTagsListe.indexOf(pojo);
 if (index > -1) {
@@ -123,7 +123,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<OffreTagsVo>('http://localhost:8080/generated/offreTags/ref/' + ref).subscribe(
+      this.http.get<OffreTagsVo>('http://localhost:8080/uca/reseaupro/offreTags/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.offreTags = value; }
         }

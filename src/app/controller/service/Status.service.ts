@@ -67,7 +67,7 @@ set statusShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<StatusVo>>('http://localhost:8080/generated/status/').subscribe(
+  this.http.get<Array<StatusVo>>('http://localhost:8080/uca/reseaupro/status/').subscribe(
     value => {
       if (value != null) {
            this.statusListe = value;
@@ -79,7 +79,7 @@ set statusShowDetail (value: boolean ) {
 }
 
   public saveStatus() {
-  this.http.post<StatusVo>('http://localhost:8080/generated/status/', this.status).subscribe(data=>{
+  this.http.post<StatusVo>('http://localhost:8080/uca/reseaupro/status/', this.status).subscribe(data=>{
     this.createHide();
      this.statusListe.push(data);
 
@@ -87,14 +87,14 @@ set statusShowDetail (value: boolean ) {
   }
 
   public editStatus() {
-  this.http.put<StatusVo>('http://localhost:8080/generated/status/', this.status).subscribe(data=>{
+  this.http.put<StatusVo>('http://localhost:8080/uca/reseaupro/status/', this.status).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findStatus ( pojo : StatusVo ){
-  this.http.post<Array<StatusVo>>('http://localhost:8080/generated/status/search/', pojo).subscribe(
+  this.http.post<Array<StatusVo>>('http://localhost:8080/uca/reseaupro/status/search/', pojo).subscribe(
     value =>{
        this.statusListe = value;  
     } );
@@ -109,7 +109,7 @@ public detailShow ( pojo : StatusVo ){
 
 
 delete(pojo: StatusVo) {
-   this.http.delete<StatusVo>('http://localhost:8080/generated/status/id/'+pojo.id).subscribe(
+   this.http.delete<StatusVo>('http://localhost:8080/uca/reseaupro/status/id/'+pojo.id).subscribe(
         value => {
         var index = this.statusListe.indexOf(pojo);
 if (index > -1) {
@@ -123,7 +123,7 @@ if (index > -1) {
 
 
        public findBycode(ref: string) {
-      this.http.get<StatusVo>('http://localhost:8080/generated/status/code/' + ref).subscribe(
+      this.http.get<StatusVo>('http://localhost:8080/uca/reseaupro/status/code/' + ref).subscribe(
         value => {
         if (value != null) { this.status = value; }
         }

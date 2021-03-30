@@ -110,7 +110,7 @@ set formationShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<FormationVo>>('http://localhost:8080/generated/formation/').subscribe(
+  this.http.get<Array<FormationVo>>('http://localhost:8080/uca/reseaupro/formation/').subscribe(
     value => {
       if (value != null) {
            this.formationListe = value;
@@ -122,7 +122,7 @@ set formationShowDetail (value: boolean ) {
 }
 
   public saveFormation() {
-  this.http.post<FormationVo>('http://localhost:8080/generated/formation/', this.formation).subscribe(data=>{
+  this.http.post<FormationVo>('http://localhost:8080/uca/reseaupro/formation/', this.formation).subscribe(data=>{
     this.createHide();
      this.formationListe.push(data);
 
@@ -132,7 +132,7 @@ set formationShowDetail (value: boolean ) {
   }
 
   public editFormation() {
-  this.http.put<FormationVo>('http://localhost:8080/generated/formation/', this.formation).subscribe(data=>{
+  this.http.put<FormationVo>('http://localhost:8080/uca/reseaupro/formation/', this.formation).subscribe(data=>{
     this.editHide();
   });
       this.formation.laureatsVo.length = 0;
@@ -187,7 +187,7 @@ set formationShowDetail (value: boolean ) {
     this.formation.etudiantsActVo.splice(i, 1);
   }
    public findFormation ( pojo : FormationVo ){
-  this.http.post<Array<FormationVo>>('http://localhost:8080/generated/formation/search/', pojo).subscribe(
+  this.http.post<Array<FormationVo>>('http://localhost:8080/uca/reseaupro/formation/search/', pojo).subscribe(
     value =>{
        this.formationListe = value;  
     } );
@@ -202,7 +202,7 @@ public detailShow ( pojo : FormationVo ){
 
 
 delete(pojo: FormationVo) {
-   this.http.delete<FormationVo>('http://localhost:8080/generated/formation/id/'+pojo.id).subscribe(
+   this.http.delete<FormationVo>('http://localhost:8080/uca/reseaupro/formation/id/'+pojo.id).subscribe(
         value => {
         var index = this.formationListe.indexOf(pojo);
 if (index > -1) {
@@ -216,7 +216,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<FormationVo>('http://localhost:8080/generated/formation/ref/' + ref).subscribe(
+      this.http.get<FormationVo>('http://localhost:8080/uca/reseaupro/formation/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.formation = value; }
         }
@@ -224,14 +224,14 @@ if (index > -1) {
         }
 
             public findAlletablissements() {
-             this.http.get<Array<EtablissementVo>>('http://localhost:8080/generated/etablissement/').subscribe(
+             this.http.get<Array<EtablissementVo>>('http://localhost:8080/uca/reseaupro/etablissement/').subscribe(
             value => {
             if (value != null) { this.etablissements = value; }
             }
             );
             }
             public findAllresponsables() {
-             this.http.get<Array<ProfesseurInfoVo>>('http://localhost:8080/generated/professeurInfo/').subscribe(
+             this.http.get<Array<ProfesseurInfoVo>>('http://localhost:8080/uca/reseaupro/professeurInfo/').subscribe(
             value => {
             if (value != null) { this.responsables = value; }
             }

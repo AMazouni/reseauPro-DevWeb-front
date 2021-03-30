@@ -67,7 +67,7 @@ set catDemandeShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<CatDemandeVo>>('http://localhost:8080/generated/catDemande/').subscribe(
+  this.http.get<Array<CatDemandeVo>>('http://localhost:8080/uca/reseaupro/catDemande/').subscribe(
     value => {
       if (value != null) {
            this.catDemandeListe = value;
@@ -79,7 +79,7 @@ set catDemandeShowDetail (value: boolean ) {
 }
 
   public saveCatDemande() {
-  this.http.post<CatDemandeVo>('http://localhost:8080/generated/catDemande/', this.catDemande).subscribe(data=>{
+  this.http.post<CatDemandeVo>('http://localhost:8080/uca/reseaupro/catDemande/', this.catDemande).subscribe(data=>{
     this.createHide();
      this.catDemandeListe.push(data);
 
@@ -87,14 +87,14 @@ set catDemandeShowDetail (value: boolean ) {
   }
 
   public editCatDemande() {
-  this.http.put<CatDemandeVo>('http://localhost:8080/generated/catDemande/', this.catDemande).subscribe(data=>{
+  this.http.put<CatDemandeVo>('http://localhost:8080/uca/reseaupro/catDemande/', this.catDemande).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findCatDemande ( pojo : CatDemandeVo ){
-  this.http.post<Array<CatDemandeVo>>('http://localhost:8080/generated/catDemande/search/', pojo).subscribe(
+  this.http.post<Array<CatDemandeVo>>('http://localhost:8080/uca/reseaupro/catDemande/search/', pojo).subscribe(
     value =>{
        this.catDemandeListe = value;  
     } );
@@ -109,7 +109,7 @@ public detailShow ( pojo : CatDemandeVo ){
 
 
 delete(pojo: CatDemandeVo) {
-   this.http.delete<CatDemandeVo>('http://localhost:8080/generated/catDemande/id/'+pojo.id).subscribe(
+   this.http.delete<CatDemandeVo>('http://localhost:8080/uca/reseaupro/catDemande/id/'+pojo.id).subscribe(
         value => {
         var index = this.catDemandeListe.indexOf(pojo);
 if (index > -1) {
@@ -123,7 +123,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<CatDemandeVo>('http://localhost:8080/generated/catDemande/ref/' + ref).subscribe(
+      this.http.get<CatDemandeVo>('http://localhost:8080/uca/reseaupro/catDemande/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.catDemande = value; }
         }

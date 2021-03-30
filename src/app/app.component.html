@@ -118,12 +118,12 @@
 
           <img
                   routerLink=""
-                  src="../assets/images/angular-icon.svg"
+                  src="../assets/images/FSSSM.png"
                   alt="Login Image"
-                  height="40px"
+                  height="10rem"
           />
           <br />
-          ANGULAR 9.0</span>
+          </span>
 
             <button  pButton class="btn btn-dark btn-circle btn-lg  float-left  mx-3" (click)="op1.toggle($event)"><i class="fa fa-bell"></i><span class="badge badge-pill badge-danger" *ngIf="this.badgeNumber>0"> {{this.badgeNumber}}</span></button>
 
@@ -131,7 +131,7 @@
         </nav>
 
 
-<router-outlet></router-outlet>
+<router-outlet class="centerContent"></router-outlet>
 
 </div>
     <p-overlayPanel #op1 [dismissable]="true" [showCloseIcon]="true" >

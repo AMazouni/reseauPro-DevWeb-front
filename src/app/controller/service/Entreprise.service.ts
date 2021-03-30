@@ -80,7 +80,7 @@ set entrepriseShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<EntrepriseVo>>('http://localhost:8080/generated/entreprise/').subscribe(
+  this.http.get<Array<EntrepriseVo>>('http://localhost:8080/uca/reseaupro/entreprise/').subscribe(
     value => {
       if (value != null) {
            this.entrepriseListe = value;
@@ -92,7 +92,7 @@ set entrepriseShowDetail (value: boolean ) {
 }
 
   public saveEntreprise() {
-  this.http.post<EntrepriseVo>('http://localhost:8080/generated/entreprise/', this.entreprise).subscribe(data=>{
+  this.http.post<EntrepriseVo>('http://localhost:8080/uca/reseaupro/entreprise/', this.entreprise).subscribe(data=>{
     this.createHide();
      this.entrepriseListe.push(data);
 
@@ -101,7 +101,7 @@ set entrepriseShowDetail (value: boolean ) {
   }
 
   public editEntreprise() {
-  this.http.put<EntrepriseVo>('http://localhost:8080/generated/entreprise/', this.entreprise).subscribe(data=>{
+  this.http.put<EntrepriseVo>('http://localhost:8080/uca/reseaupro/entreprise/', this.entreprise).subscribe(data=>{
     this.editHide();
   });
       this.entreprise.fonctionsLaureatVo.length = 0;
@@ -129,7 +129,7 @@ set entrepriseShowDetail (value: boolean ) {
     this.entreprise.fonctionsLaureatVo.splice(i, 1);
   }
    public findEntreprise ( pojo : EntrepriseVo ){
-  this.http.post<Array<EntrepriseVo>>('http://localhost:8080/generated/entreprise/search/', pojo).subscribe(
+  this.http.post<Array<EntrepriseVo>>('http://localhost:8080/uca/reseaupro/entreprise/search/', pojo).subscribe(
     value =>{
        this.entrepriseListe = value;  
     } );
@@ -144,7 +144,7 @@ public detailShow ( pojo : EntrepriseVo ){
 
 
 delete(pojo: EntrepriseVo) {
-   this.http.delete<EntrepriseVo>('http://localhost:8080/generated/entreprise/id/'+pojo.id).subscribe(
+   this.http.delete<EntrepriseVo>('http://localhost:8080/uca/reseaupro/entreprise/id/'+pojo.id).subscribe(
         value => {
         var index = this.entrepriseListe.indexOf(pojo);
 if (index > -1) {
@@ -158,7 +158,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<EntrepriseVo>('http://localhost:8080/generated/entreprise/ref/' + ref).subscribe(
+      this.http.get<EntrepriseVo>('http://localhost:8080/uca/reseaupro/entreprise/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.entreprise = value; }
         }

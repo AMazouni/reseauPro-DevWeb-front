@@ -94,7 +94,7 @@ set candidatureShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<CandidatureVo>>('http://localhost:8080/generated/candidature/').subscribe(
+  this.http.get<Array<CandidatureVo>>('http://localhost:8080/uca/reseaupro/candidature/').subscribe(
     value => {
       if (value != null) {
            this.candidatureListe = value;
@@ -106,7 +106,7 @@ set candidatureShowDetail (value: boolean ) {
 }
 
   public saveCandidature() {
-  this.http.post<CandidatureVo>('http://localhost:8080/generated/candidature/', this.candidature).subscribe(data=>{
+  this.http.post<CandidatureVo>('http://localhost:8080/uca/reseaupro/candidature/', this.candidature).subscribe(data=>{
     this.createHide();
      this.candidatureListe.push(data);
 
@@ -114,14 +114,14 @@ set candidatureShowDetail (value: boolean ) {
   }
 
   public editCandidature() {
-  this.http.put<CandidatureVo>('http://localhost:8080/generated/candidature/', this.candidature).subscribe(data=>{
+  this.http.put<CandidatureVo>('http://localhost:8080/uca/reseaupro/candidature/', this.candidature).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findCandidature ( pojo : CandidatureVo ){
-  this.http.post<Array<CandidatureVo>>('http://localhost:8080/generated/candidature/search/', pojo).subscribe(
+  this.http.post<Array<CandidatureVo>>('http://localhost:8080/uca/reseaupro/candidature/search/', pojo).subscribe(
     value =>{
        this.candidatureListe = value;  
     } );
@@ -136,7 +136,7 @@ public detailShow ( pojo : CandidatureVo ){
 
 
 delete(pojo: CandidatureVo) {
-   this.http.delete<CandidatureVo>('http://localhost:8080/generated/candidature/id/'+pojo.id).subscribe(
+   this.http.delete<CandidatureVo>('http://localhost:8080/uca/reseaupro/candidature/id/'+pojo.id).subscribe(
         value => {
         var index = this.candidatureListe.indexOf(pojo);
 if (index > -1) {
@@ -150,7 +150,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<CandidatureVo>('http://localhost:8080/generated/candidature/ref/' + ref).subscribe(
+      this.http.get<CandidatureVo>('http://localhost:8080/uca/reseaupro/candidature/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.candidature = value; }
         }
@@ -158,21 +158,21 @@ if (index > -1) {
         }
 
             public findAllcandidats() {
-             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/generated/etudiantInfo/').subscribe(
+             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/uca/reseaupro/etudiantInfo/').subscribe(
             value => {
             if (value != null) { this.candidats = value; }
             }
             );
             }
             public findAllstatuss() {
-             this.http.get<Array<StatusVo>>('http://localhost:8080/generated/status/').subscribe(
+             this.http.get<Array<StatusVo>>('http://localhost:8080/uca/reseaupro/status/').subscribe(
             value => {
             if (value != null) { this.statuss = value; }
             }
             );
             }
             public findAlloffreConcernes() {
-             this.http.get<Array<OffreVo>>('http://localhost:8080/generated/offre/').subscribe(
+             this.http.get<Array<OffreVo>>('http://localhost:8080/uca/reseaupro/offre/').subscribe(
             value => {
             if (value != null) { this.offreConcernes = value; }
             }

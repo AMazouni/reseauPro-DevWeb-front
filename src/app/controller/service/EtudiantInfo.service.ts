@@ -136,7 +136,7 @@ set etudiantInfoShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/generated/etudiantInfo/').subscribe(
+  this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/uca/reseaupro/etudiantInfo/').subscribe(
     value => {
       if (value != null) {
            this.etudiantInfoListe = value;
@@ -148,7 +148,7 @@ set etudiantInfoShowDetail (value: boolean ) {
 }
 
   public saveEtudiantInfo() {
-  this.http.post<EtudiantInfoVo>('http://localhost:8080/generated/etudiantInfo/', this.etudiantInfo).subscribe(data=>{
+  this.http.post<EtudiantInfoVo>('http://localhost:8080/uca/reseaupro/etudiantInfo/', this.etudiantInfo).subscribe(data=>{
     this.createHide();
      this.etudiantInfoListe.push(data);
 
@@ -160,7 +160,7 @@ set etudiantInfoShowDetail (value: boolean ) {
   }
 
   public editEtudiantInfo() {
-  this.http.put<EtudiantInfoVo>('http://localhost:8080/generated/etudiantInfo/', this.etudiantInfo).subscribe(data=>{
+  this.http.put<EtudiantInfoVo>('http://localhost:8080/uca/reseaupro/etudiantInfo/', this.etudiantInfo).subscribe(data=>{
     this.editHide();
   });
       this.etudiantInfo.experiencesProVo.length = 0;
@@ -249,7 +249,7 @@ set etudiantInfoShowDetail (value: boolean ) {
     this.etudiantInfo.demandesEnvoyeVo.splice(i, 1);
   }
    public findEtudiantInfo ( pojo : EtudiantInfoVo ){
-  this.http.post<Array<EtudiantInfoVo>>('http://localhost:8080/generated/etudiantInfo/search/', pojo).subscribe(
+  this.http.post<Array<EtudiantInfoVo>>('http://localhost:8080/uca/reseaupro/etudiantInfo/search/', pojo).subscribe(
     value =>{
        this.etudiantInfoListe = value;  
     } );
@@ -264,7 +264,7 @@ public detailShow ( pojo : EtudiantInfoVo ){
 
 
 delete(pojo: EtudiantInfoVo) {
-   this.http.delete<EtudiantInfoVo>('http://localhost:8080/generated/etudiantInfo/id/'+pojo.id).subscribe(
+   this.http.delete<EtudiantInfoVo>('http://localhost:8080/uca/reseaupro/etudiantInfo/id/'+pojo.id).subscribe(
         value => {
         var index = this.etudiantInfoListe.indexOf(pojo);
 if (index > -1) {
@@ -278,7 +278,7 @@ if (index > -1) {
 
 
        public findBycne(ref: string) {
-      this.http.get<EtudiantInfoVo>('http://localhost:8080/generated/etudiantInfo/cne/' + ref).subscribe(
+      this.http.get<EtudiantInfoVo>('http://localhost:8080/uca/reseaupro/etudiantInfo/cne/' + ref).subscribe(
         value => {
         if (value != null) { this.etudiantInfo = value; }
         }
@@ -286,14 +286,14 @@ if (index > -1) {
         }
 
             public findAllsexes() {
-             this.http.get<Array<SexeVo>>('http://localhost:8080/generated/sexe/').subscribe(
+             this.http.get<Array<SexeVo>>('http://localhost:8080/uca/reseaupro/sexe/').subscribe(
             value => {
             if (value != null) { this.sexes = value; }
             }
             );
             }
             public findAllformationActuelles() {
-             this.http.get<Array<FormationVo>>('http://localhost:8080/generated/formation/').subscribe(
+             this.http.get<Array<FormationVo>>('http://localhost:8080/uca/reseaupro/formation/').subscribe(
             value => {
             if (value != null) { this.formationActuelles = value; }
             }

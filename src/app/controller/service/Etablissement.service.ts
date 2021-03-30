@@ -80,7 +80,7 @@ set etablissementShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<EtablissementVo>>('http://localhost:8080/generated/etablissement/').subscribe(
+  this.http.get<Array<EtablissementVo>>('http://localhost:8080/uca/reseaupro/etablissement/').subscribe(
     value => {
       if (value != null) {
            this.etablissementListe = value;
@@ -92,7 +92,7 @@ set etablissementShowDetail (value: boolean ) {
 }
 
   public saveEtablissement() {
-  this.http.post<EtablissementVo>('http://localhost:8080/generated/etablissement/', this.etablissement).subscribe(data=>{
+  this.http.post<EtablissementVo>('http://localhost:8080/uca/reseaupro/etablissement/', this.etablissement).subscribe(data=>{
     this.createHide();
      this.etablissementListe.push(data);
 
@@ -101,7 +101,7 @@ set etablissementShowDetail (value: boolean ) {
   }
 
   public editEtablissement() {
-  this.http.put<EtablissementVo>('http://localhost:8080/generated/etablissement/', this.etablissement).subscribe(data=>{
+  this.http.put<EtablissementVo>('http://localhost:8080/uca/reseaupro/etablissement/', this.etablissement).subscribe(data=>{
     this.editHide();
   });
       this.etablissement.formationsVo.length = 0;
@@ -127,7 +127,7 @@ set etablissementShowDetail (value: boolean ) {
     this.etablissement.formationsVo.splice(i, 1);
   }
    public findEtablissement ( pojo : EtablissementVo ){
-  this.http.post<Array<EtablissementVo>>('http://localhost:8080/generated/etablissement/search/', pojo).subscribe(
+  this.http.post<Array<EtablissementVo>>('http://localhost:8080/uca/reseaupro/etablissement/search/', pojo).subscribe(
     value =>{
        this.etablissementListe = value;  
     } );
@@ -142,7 +142,7 @@ public detailShow ( pojo : EtablissementVo ){
 
 
 delete(pojo: EtablissementVo) {
-   this.http.delete<EtablissementVo>('http://localhost:8080/generated/etablissement/id/'+pojo.id).subscribe(
+   this.http.delete<EtablissementVo>('http://localhost:8080/uca/reseaupro/etablissement/id/'+pojo.id).subscribe(
         value => {
         var index = this.etablissementListe.indexOf(pojo);
 if (index > -1) {
@@ -156,7 +156,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<EtablissementVo>('http://localhost:8080/generated/etablissement/ref/' + ref).subscribe(
+      this.http.get<EtablissementVo>('http://localhost:8080/uca/reseaupro/etablissement/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.etablissement = value; }
         }

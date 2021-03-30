@@ -85,7 +85,7 @@ set fonctionShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<FonctionVo>>('http://localhost:8080/generated/fonction/').subscribe(
+  this.http.get<Array<FonctionVo>>('http://localhost:8080/uca/reseaupro/fonction/').subscribe(
     value => {
       if (value != null) {
            this.fonctionListe = value;
@@ -97,7 +97,7 @@ set fonctionShowDetail (value: boolean ) {
 }
 
   public saveFonction() {
-  this.http.post<FonctionVo>('http://localhost:8080/generated/fonction/', this.fonction).subscribe(data=>{
+  this.http.post<FonctionVo>('http://localhost:8080/uca/reseaupro/fonction/', this.fonction).subscribe(data=>{
     this.createHide();
      this.fonctionListe.push(data);
 
@@ -105,14 +105,14 @@ set fonctionShowDetail (value: boolean ) {
   }
 
   public editFonction() {
-  this.http.put<FonctionVo>('http://localhost:8080/generated/fonction/', this.fonction).subscribe(data=>{
+  this.http.put<FonctionVo>('http://localhost:8080/uca/reseaupro/fonction/', this.fonction).subscribe(data=>{
     this.editHide();
   });
    
   }
 
    public findFonction ( pojo : FonctionVo ){
-  this.http.post<Array<FonctionVo>>('http://localhost:8080/generated/fonction/search/', pojo).subscribe(
+  this.http.post<Array<FonctionVo>>('http://localhost:8080/uca/reseaupro/fonction/search/', pojo).subscribe(
     value =>{
        this.fonctionListe = value;  
     } );
@@ -127,7 +127,7 @@ public detailShow ( pojo : FonctionVo ){
 
 
 delete(pojo: FonctionVo) {
-   this.http.delete<FonctionVo>('http://localhost:8080/generated/fonction/id/'+pojo.id).subscribe(
+   this.http.delete<FonctionVo>('http://localhost:8080/uca/reseaupro/fonction/id/'+pojo.id).subscribe(
         value => {
         var index = this.fonctionListe.indexOf(pojo);
 if (index > -1) {
@@ -141,7 +141,7 @@ if (index > -1) {
 
 
        public findByref(ref: string) {
-      this.http.get<FonctionVo>('http://localhost:8080/generated/fonction/ref/' + ref).subscribe(
+      this.http.get<FonctionVo>('http://localhost:8080/uca/reseaupro/fonction/ref/' + ref).subscribe(
         value => {
         if (value != null) { this.fonction = value; }
         }
@@ -149,14 +149,14 @@ if (index > -1) {
         }
 
             public findAllentreprises() {
-             this.http.get<Array<EntrepriseVo>>('http://localhost:8080/generated/entreprise/').subscribe(
+             this.http.get<Array<EntrepriseVo>>('http://localhost:8080/uca/reseaupro/entreprise/').subscribe(
             value => {
             if (value != null) { this.entreprises = value; }
             }
             );
             }
             public findAlloccupePars() {
-             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/generated/etudiantInfo/').subscribe(
+             this.http.get<Array<EtudiantInfoVo>>('http://localhost:8080/uca/reseaupro/etudiantInfo/').subscribe(
             value => {
             if (value != null) { this.occupePars = value; }
             }

@@ -98,7 +98,7 @@ set professeurInfoShowDetail (value: boolean ) {
   }
 
   public findAll(){
-  this.http.get<Array<ProfesseurInfoVo>>('http://localhost:8080/generated/professeurInfo/').subscribe(
+  this.http.get<Array<ProfesseurInfoVo>>('http://localhost:8080/uca/reseaupro/professeurInfo/').subscribe(
     value => {
       if (value != null) {
            this.professeurInfoListe = value;
@@ -110,7 +110,7 @@ set professeurInfoShowDetail (value: boolean ) {
 }
 
   public saveProfesseurInfo() {
-  this.http.post<ProfesseurInfoVo>('http://localhost:8080/generated/professeurInfo/', this.professeurInfo).subscribe(data=>{
+  this.http.post<ProfesseurInfoVo>('http://localhost:8080/uca/reseaupro/professeurInfo/', this.professeurInfo).subscribe(data=>{
     this.createHide();
      this.professeurInfoListe.push(data);
 
@@ -119,7 +119,7 @@ set professeurInfoShowDetail (value: boolean ) {
   }
 
   public editProfesseurInfo() {
-  this.http.put<ProfesseurInfoVo>('http://localhost:8080/generated/professeurInfo/', this.professeurInfo).subscribe(data=>{
+  this.http.put<ProfesseurInfoVo>('http://localhost:8080/uca/reseaupro/professeurInfo/', this.professeurInfo).subscribe(data=>{
     this.editHide();
   });
       this.professeurInfo.responsableDeVo.length = 0;
@@ -145,7 +145,7 @@ set professeurInfoShowDetail (value: boolean ) {
     this.professeurInfo.responsableDeVo.splice(i, 1);
   }
    public findProfesseurInfo ( pojo : ProfesseurInfoVo ){
-  this.http.post<Array<ProfesseurInfoVo>>('http://localhost:8080/generated/professeurInfo/search/', pojo).subscribe(
+  this.http.post<Array<ProfesseurInfoVo>>('http://localhost:8080/uca/reseaupro/professeurInfo/search/', pojo).subscribe(
     value =>{
        this.professeurInfoListe = value;  
     } );
@@ -160,7 +160,7 @@ public detailShow ( pojo : ProfesseurInfoVo ){
 
 
 delete(pojo: ProfesseurInfoVo) {
-   this.http.delete<ProfesseurInfoVo>('http://localhost:8080/generated/professeurInfo/id/'+pojo.id).subscribe(
+   this.http.delete<ProfesseurInfoVo>('http://localhost:8080/uca/reseaupro/professeurInfo/id/'+pojo.id).subscribe(
         value => {
         var index = this.professeurInfoListe.indexOf(pojo);
 if (index > -1) {
@@ -174,7 +174,7 @@ if (index > -1) {
 
 
        public findBycode(ref: string) {
-      this.http.get<ProfesseurInfoVo>('http://localhost:8080/generated/professeurInfo/code/' + ref).subscribe(
+      this.http.get<ProfesseurInfoVo>('http://localhost:8080/uca/reseaupro/professeurInfo/code/' + ref).subscribe(
         value => {
         if (value != null) { this.professeurInfo = value; }
         }
@@ -182,14 +182,14 @@ if (index > -1) {
         }
 
             public findAlletablissements() {
-             this.http.get<Array<EtablissementVo>>('http://localhost:8080/generated/etablissement/').subscribe(
+             this.http.get<Array<EtablissementVo>>('http://localhost:8080/uca/reseaupro/etablissement/').subscribe(
             value => {
             if (value != null) { this.etablissements = value; }
             }
             );
             }
             public findAllcomptes() {
-             this.http.get<Array<UtilisateurVo>>('http://localhost:8080/generated/utilisateur/').subscribe(
+             this.http.get<Array<UtilisateurVo>>('http://localhost:8080/uca/reseaupro/utilisateur/').subscribe(
             value => {
             if (value != null) { this.comptes = value; }
             }
