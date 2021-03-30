@@ -46,15 +46,20 @@
                 </div>
                 <div class="col-md-6 py-2">
                     <label>role</label>
-                    <input type="text" class="form-control" [(ngModel)] = "utilisateur.role">
+                    <select class="form-control" [(ngModel)] = "utilisateur.role">
+                        <option value="admin">admin</option>
+                        <option value="student">student</option>
+                        <option value="allumni">allumni</option>
+                        <option value="professor">professor</option>
+                    </select>
                 </div>
                 <div class="col-md-6 py-2">
                     <label>email</label>
                     <input type="text" class="form-control" [(ngModel)] = "utilisateur.email">
                 </div>
         </div>
-                    <div class="card-header row py-2">adminInfo</div>
-                    <div class="card body row py-2">
+                    <div class="card-header row py-2" *ngIf="utilisateur.role=='admin'">adminInfo</div>
+                    <div class="card body row py-2" *ngIf="utilisateur.role=='admin'">
                         <div class="row">
                                     <div class="col-md-6 py-2"><label>nom</label>
                                         <input type="text" class="form-control" [(ngModel)] = "utilisateur.adminInfoVo.nom">
@@ -70,8 +75,8 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="card-header row py-2">laureatInfo</div>
-                    <div class="card body row py-2">
+                    <div class="card-header row py-2" *ngIf="utilisateur.role=='allumni'" >laureatInfo</div>
+                    <div class="card body row py-2" *ngIf="utilisateur.role=='allumni'">
                         <div class="row">
                                     <div class="col-md-6 py-2"><label>anneFinEtude</label>
                                         <input type="text" class="form-control" [(ngModel)] = "utilisateur.laureatInfoVo.anneFinEtude">
@@ -105,8 +110,8 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="card-header row py-2">etudiantInfo</div>
-                    <div class="card body row py-2">
+                    <div class="card-header row py-2"  *ngIf="utilisateur.role=='student'">etudiantInfo</div>
+                    <div class="card body row py-2"  *ngIf="utilisateur.role=='student'" >
                         <div class="row">
                                     <div class="col-md-6 py-2"><label>anneFinEtude</label>
                                         <input type="text" class="form-control" [(ngModel)] = "utilisateur.etudiantInfoVo.anneFinEtude">
@@ -140,8 +145,8 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="card-header row py-2">professeurInfo</div>
-                    <div class="card body row py-2">
+                    <div class="card-header row py-2" *ngIf="utilisateur.role=='professor'">professeurInfo</div>
+                    <div class="card body row py-2" *ngIf="utilisateur.role=='professor'">
                         <div class="row">
                                     <div class="col-md-6 py-2"><label>code</label>
                                         <input type="text" class="form-control" [(ngModel)] = "utilisateur.professeurInfoVo.code">

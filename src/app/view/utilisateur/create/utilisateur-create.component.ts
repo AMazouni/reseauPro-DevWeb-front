@@ -18,8 +18,21 @@ export class UtilisateurCreateComponent implements OnInit {
   constructor(private utilisateurService: UtilisateurService) { }
 
    ngOnInit(): void {
-    }
 
+
+       this.initUtilisateur()
+    }
+     initUtilisateur() {
+      this.utilisateur.adminInfoVo= new AdminInfoVo()
+         this.utilisateur.adminInfoVo.compteVo=this.utilisateur
+      this.utilisateur.etudiantInfoVo= new EtudiantInfoVo()
+         this.utilisateur.etudiantInfoVo.compteVo=this.utilisateur
+      this.utilisateur.professeurInfoVo= new ProfesseurInfoVo()
+         this.utilisateur.professeurInfoVo.compteVo=this.utilisateur
+      this.utilisateur.laureatInfoVo= new EtudiantInfoVo()
+         this.utilisateur.laureatInfoVo.compteVo=this.utilisateur
+
+    }
    get utilisateur(): UtilisateurVo {
     return this.utilisateurService.utilisateur;
   }
